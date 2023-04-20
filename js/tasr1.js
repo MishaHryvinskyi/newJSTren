@@ -152,6 +152,72 @@
 // const message = balance > 0 ? 'Позитивний баланс' : 'Негативний баланс';
 // console.log(message);
 
-for (let i = 0; i <= 20; i += 2) {
-    console.log(i);
-  }
+// Напиши скрипт вибору готеля по кількості зірок
+// 1 - 20$, 2 - 30$, 3 - 5o$, 4 - 70$, 5 - 120$
+// якщо в змінній старт щось окрім числа 1 - 5 вивиди
+//  рядок 'Такої кількості зірок немає'
+
+const stars = 4;
+let price;
+
+// // switch
+
+// switch (stars) {
+//   case 1:
+//     price = '20$';
+//     break;
+
+//     case 2:
+//       price = '30$';
+//       break;
+
+//       case 3:
+//         price = '50$';
+//         break;
+
+//         case 4:
+//           price = '70$';
+//           break;
+
+//           case 5:
+//             price = '120$';
+//             break;
+
+//             default:
+//               console.log('Такої кількості зірок немає');
+// }
+// console.log(`Ціна ${stars} зіркового готелю :`, price);
+
+// if()
+
+// if (stars === 1){
+//   price = 20;
+// } else if (stars === 2) {
+//   price = 30;
+// } else if (stars === 3) {
+//   price = 50;
+// } else if (stars === 4) {
+//   price = 70;
+// } else if (stars === 5) {
+//   price = 120;
+// } else {
+//   console.log('Такої кількості зірок немає');
+// }
+// console.log(`Ціна за готель з ${stars} зірками`, price);
+
+// Напиши скрипт вибору ціни за готель по кількості зірок
+// 1,2 - 20$, 3,4 - 30$, 5 - 120$
+if (stars === 1 ){
+  price = 20;
+} else if (stars === 2) {
+  price = 30;
+} else if (stars === 3) {
+  price = 50;
+} else if (stars === 4) {
+  price = 70;
+} else if (stars === 5) {
+  price = 120;
+} else {
+  console.log('Такої кількості зірок немає');
+}
+console.log(`Ціна за готель з ${stars} зірками`, price);
