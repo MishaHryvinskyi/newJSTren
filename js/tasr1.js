@@ -250,27 +250,29 @@
 // 'Вам передзвонить менеджер'
 
 // 1 зробити змінні
+// let option = '';
+// let message = '';
+
 // 2 зробити switch 1 2 3
 // 3 в кожному кейсі записати в message повідомлення
 // 4 залогувати message
 
-const option = 1;
-let message;
 
-switch(option) {
-  case 1 :
-    message = 'Ви зможете забрати товар завтра з 12:00 в нашому офісі';
-    break;
 
-  case 2 :
-    message = 'Курєр доставить заказ завтра з 12 :00 до 18:00';
-    break;
+// switch(option) {
+//   case 1 :
+//     message = 'Ви зможете забрати товар завтра з 12:00 в нашому офісі';
+//     break;
+
+//   case 2 :
+//     message = 'Курєр доставить заказ завтра з 12 :00 до 18:00';
+//     break;
   
-  case 3 : 
-  message = 'Посилка буде відправлена сьогодні';
-  break;
+//   case 3 : 
+//   message = 'Посилка буде відправлена сьогодні';
+//   break;
   
-  default : 
-  message = 'Вам передзвонить менеджер';
-}
-console.log(message);
+//   default : 
+//   message = 'Вам передзвонить менеджер';
+// }
+// console.log(message);
