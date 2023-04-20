@@ -152,3 +152,4 @@
 // const message = balance > 0 ? 'Позитивний баланс' : 'Негативний баланс';
 // console.log(message);
 
+console.log(2);
