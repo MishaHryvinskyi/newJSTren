@@ -152,4 +152,6 @@
 // const message = balance > 0 ? 'Позитивний баланс' : 'Негативний баланс';
 // console.log(message);
 
-console.log(2);
+for (let i = 0; i <= 20; i += 2) {
+    console.log(i);
+  }
