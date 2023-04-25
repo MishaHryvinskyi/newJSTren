@@ -146,16 +146,131 @@
 // Напиши функцію findSmallesNumber(numbers) для пошуку самого маленького числа в масиві
 // при умові що числа унікальні і не повторюються
 
-const findSmallesNumber = function (numbers) {
-    let smallesnumber = numbers[0];
-    for (const number of numbers) {
-        if(number < smallesnumber) {
-            smallesnumber = number;
-        }
-    }
-    return smallesnumber;
-}
+// const findSmallesNumber = function (numbers) {
+//     let smallesnumber = numbers[0];
+//     for (const number of numbers) {
+//         if(number < smallesnumber) {
+//             smallesnumber = number;
+//         }
+//     }
+//     return smallesnumber;
+// }
 
-console.log(findSmallesNumber([3, 8, 12, -2, 15]));
-console.log(findSmallesNumber([100, 54, 8, 12, 47]));
-console.log(findSmallesNumber([7, 21, 84, 15, 4]));
+// console.log(findSmallesNumber([3, 8, 12, -2, 15]));
+// console.log(findSmallesNumber([100, 54, 8, 12, 47]));
+// console.log(findSmallesNumber([7, 21, 84, 15, 4]));
+
+// Задача 5
+//  Напиши функцію changeCase(string) яка змінює регіст
+// кожного символу в рядку на протилежний
+// Наприклад якщо рядок "JavaScript", то на виході має бути рядок jAVAsCRIPT
+
+// const string = 'qWeRTzxCv';
+
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     let invertedString = '';
+
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
+
+//         invertedString += isInLowerCase 
+//         ? letter.toUpperCase() 
+//         : letter.toLowerCase();
+//     }
+
+//     return invertedString;
+// }
+
+// console.log(changeCase('qweRTY'));
+// console.log(changeCase('mAnGo'));
+// console.log(changeCase('AjAx'));
+// console.log(changeCase('kATIA'));
+
+//  Задача 6 
+// Напиши функцію slugify(string) яка получить рядок і поверта. URL-slug
+// Рядок складається тільки з букв і пробілів
+
+// const slugify = function (string) {
+    
+//      return string.toLowerCase().split(' ').join('-');
+// }
+
+// console.log(slugify('Top 10 benefits of React framework'));
+// console.log(slugify('Azure Static Web Apps are Aweasome'));
+// console.log(slugify('Technical writing tips for non-native English speakers'));
+
+// document.body.textContent = slugify('Top 10 benefits of React framework');
+
+// args
+
+
+// const fn = function () {
+//     console.log(arguments);
+
+// const args = Array.from(arguments);
+
+// console.log(args);
+//     // for (const arg of arguments) {
+//     //     console.log(arg);
+//     // }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// const fn = function (a, b, c, ...args) {
+//     args.shift();
+//     args.push(17);
+//    console.log(`${a} ${b} ${c}`);
+// console.log(args);
+    
+// };
+    
+// fn('hello' ,1, 2, 3);
+// fn('ME', 1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// Задача 7
+//  Напиши функцію add складення випадкової кількості аргументів {чисел}
+// Операція ... {rest}
+
+// const add = function (...args) {
+//     console.log(args);
+//     let total = 0;
+
+//     for (const arg of args) {
+//         total += arg;
+//     }
+//     return total;
+// };
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 4, 5, 6));
+
+// Задача 8
+// Напиши функцію filterNumbers(array [, nimber1, ...]) яка:
+// -першим аргументом приймає масив чисел
+// -після першого аргументу може бути випадкова кількість інших аргументів які будуть числами
+// -Функція повинна вернути новий масив в якому будуть тільки аргументи починаючи з другого
+// для яких є аналог в оригінальному масиві
+
+// const filterNumbers = function (array, ...args) {
+    
+
+// const uniqueElements = [];
+
+//     for (const elem of array) {
+        
+//         if (args.includes(elem)) {
+//             uniqueElements.push(elem);
+//         }
+//     }
+//    return uniqueElements; 
+// };
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));// [2, 3]
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));// [15, 30]
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));// [200]
+
