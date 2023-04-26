@@ -1,0 +1,10 @@
+.pics {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    background-color: rgb(222, 231, 231);
+    margin: 10px;
+    list-style: none;
+}
