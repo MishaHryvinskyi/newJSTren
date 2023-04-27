@@ -27,50 +27,49 @@
 //     console.log(`Ласкаво просимо ${name}.`)
 //   });
 
-  
 
-//   registerGuest("Полі", function notify(name) {
-//     console.log(`Шановний(а) ${name}, ваш номер буде готовий за 30 хвилин.`);
-//   });
+// const fnA = function (message, callback) {
+//     console.log(message);
+//     console.log(callback);
+//     callback(100);
+// };
 
-// function processCall(recipient, onAvailable, onNotAvailable) {
-//     // Імітуємо доступність абонента випадковим числом
-//     const isRecipientAvailable = Math.random() > 0.5;
+// const fnB = function (number) {
+//   console.log("Це лог при виклиці функції fnB", number);
+// };
 
-//     if (!isRecipientAvailable) {
-//         onNotAvailable(recipient);
-//         return;
-//     } 
-//     onAvailable(recipient);
-//   }
-  
-//   function takeCall(name) {
-//     console.log(`З'єднуємо з ${name}, очікуйте...`);
-//     // Логіка прийняття дзвінка
-//   }
-  
-//   function activateAnsweringMachine(name) {
-//     console.log(`Абонент ${name} недоступний, залиште повідомлення.`);
-//     // Логіка активації автовідповідача
-//   }
-  
-//   function leaveHoloMessage(name) {
-//     console.log(`Абонент ${name} недоступний, записуємо голограму.`);
-//     // Логіка запису голограми
-//   }
-  
-//   processCall("Манго", takeCall, activateAnsweringMachine);
-//   processCall("Полі", takeCall, leaveHoloMessage);
+// fnA('Качеча!!!', fnB);
+
+// const doMath = function (a, b, callback) {
+//   const result = callback(a, b);
+
+//   console.log(result);
+// };
+
+// const add = function (x, y) {
+//   return x + y;
+// };
+
+// const sub = function (x, y) {
+//   return x - y;
+// };
 
 
-// Звичайне оголошення функції
-function classicAdd(a, b, c) {
-    return a + b + c;
-  }
-  
-  // Те саме стрілочною функцією
-  const arrowAdd = (a, b, c) => {
-    return a + b + c;
-  };
-  console.log(arrowAdd(1, 2, 3));
-  console.log(classicAdd(1, 2, 3));
+// // стрілочна функція
+// doMath(10, 5,  (x, y) => x / y);
+// // літерал функції
+// doMath(5, 3, function (x, y) {
+//   return x * y;
+// });
+// doMath(20, 8, sub);
+// doMath(3, 3, add);
+
+const buttonRef = document.querySelector('.js-button');
+
+
+const handleBtnClick = function () {
+  console.log('Клік по кнопці' + Date.now());
+  document.body.style.backgroundColor = "teal";  
+};
+
+buttonRef.addEventListener('click', handleBtnClick);
