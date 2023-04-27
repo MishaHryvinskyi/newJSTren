@@ -167,6 +167,10 @@
 
 // console.log(new User('Mango', 20));
 
+
+
+
+
 // Задача 1 колбек функції
 // Напишіть наступні функції
 
@@ -178,33 +182,139 @@
 
 // *logTotalPrice(product) - колбек, що приймає обєкт продукту і
 // логіює загальну вартість товару в консоль
-const products = [
-  { name: 'apple', 
-    price: 15,
-    quantity: 30,
-  },
-  { name: 'cherry', 
-    price: 40,
-    quantity: 50,
-  },
-];
-let total = 0;
+// const products = [
+//   { name: 'apple', 
+//     price: 15,
+//     quantity: 30,
+//   },
+//   { name: 'cherry', 
+//     price: 40,
+//     quantity: 50,
+//   },
+// ];
+// let total = 0;
 
-const createProduct = function (obj, callback) {
+// const createProduct = function (obj, callback) {
+//   const product = { ...obj, id: Date.now() }; 
+//    callback(product);
+// };
 
+// function logproduct ({ name, price, quantity }) {
+//   console.log(`
+//   Назва продукту: ${name}. 
+//   Кількості на складі ${quantity}. 
+//   Ціна за кілограм ${price}. грн
+//   `);
+// };
+
+// function logTotalPrice ({ name, price, quantity }) {
+//   console.log(`
+//   Загальна вартість всіх 
+//   товарів ${name} на складі
+//   становить ${price * quantity} грн
+//   `);
+// };
+
+// createProduct(products[0], logTotalPrice);
+// createProduct(products[0], logproduct);
+// createProduct(products[1], logTotalPrice);
+// createProduct(products[1], logproduct);
+
+
+// Задача 2 Колбек-функції
+// Додайте обєкт account методи withdraw(amount, onSuccess, onError)
+// та deposit(amount, onSuccess, onError), де перший параметер 
+// це сума операції, а другий та третій - коллбеки.
+
+
+// Метод withdraw викликає onError якщо amount більше 
+// TRANSACTION_LIMIT або this.balance? i onSuccess в шншому випадку
+
+// Метод deposit викликає onError якщо amount більше 
+// TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: "Misha",
+//   balance: 1500,
+//   withdraw(amount, onSuccess, onError) {
+//     // Зняття коштів
+//     // 1. чи не перевищує amount наш ліміт
+//     // 2. чи не перевищує amount наш баланс
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError(`Ви перевищили ліміт. Поточний ліміт складає ${TRANSACTION_LIMIT} грн.`);
+//     } else if (amount > this.balance) {
+//       onError(`Недостачно коштів.поточний баланс складає ${this.balance}. грн`);
+//     } else {
+//       this.balance -= amount;
+//       onSuccess(
+//         `Успішно знято. Поточний баланс складає ${this.balance}. грн`
+//          );
+//     }
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError(`Ви перевищили ліміт. Поточний ліміт складає ${TRANSACTION_LIMIT} грн.`);
+//     } else if (amount < 0) {
+//       onError(`Некоректна кількість. Спробуйте ще. Поточний баланс складає ${this.balance}. грн`);
+//     } else {
+//       this.balance += amount;
+//       onSuccess(
+//         `Успішно покладено. Поточний баланс складає ${this.balance}. грн`
+//          );
+//     }
+//   },
+// };
+
+// const onSuccess = message => console.log(`Успішна операція! ${message}`);
+// const onError = message => console.error(`Невдала операція! ${message}`);
+
+// // function onSuccess (msg) {
+// //   console.log(`Успішна операція! ${msg}`);
+// // };
+// // function onError msg {
+// //   console.error(`Невдала операція! ${msg}`);
+// // };
+
+// account.withdraw(1000, onSuccess, onError);
+// account.withdraw(1001, onSuccess, onError);
+// account.withdraw(500, onSuccess, onError);
+// account.withdraw(500, onSuccess, onError);
+
+// account.deposit(1000, onSuccess, onError);
+// account.deposit(1000, onSuccess, onError);
+// account.deposit(1000, onSuccess, onError);
+
+
+// Задача 3 коллбек + стрілки
+
+// Напишіть функцію each(array, callback), яка першим
+// параметром очікує масив, а другим - функцію, яка застосовується
+// до кожного елемента масиву. Функція each повинна повернути
+// новий масив, елементи якого будуть результати виклику колбека.
+
+// 1. створити новий пустий масив куди будемо додавати змінені елементи старого
+// 2. перебір масиву
+  // 2.1. викликати коллбек функцію на поточному елементі масиву
+  // 2.2. результат колбек функції запушити в новий масив
+//3. Повернути новий масив
+
+function each (array, callback)  {
+  const newArray = [];
+  // for (const element of array) {
+  //   // newArray.push(callback(element));
+  //   const newElement = callback(element);
+  //   newArray.push(newElement);
+  // }
+  array.forEach(element => newArray.push(callback(element)));
+   return newArray;
 };
 
-function logproduct ({ name, price, quantity }) {
-    console.log(`Назва продукту: ${name}. Кількості на складі ${quantity}. Ціна за кілограм ${price}. грн`);
+const pow = n => n ** 2;
 
-};
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-logproduct(products[1]);
-logproduct(products[0]);
+console.log(each(arr, n => n + 1))
+console.log(each(arr, pow))
 
-function logTotalPrice ({ name, price, quantity }) {
-  console.log(`Загальна вартість всіх товарів ${name} на складі становить ${price * quantity} грн`);
-};
-
-logTotalPrice(products[1]);
-logTotalPrice(products[0]);
