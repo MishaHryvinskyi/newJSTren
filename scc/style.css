@@ -3,9 +3,25 @@
     flex-wrap: wrap;
 }
 
-li {
-    background-color: rgb(222, 231, 231);
-    margin: 10px;
-    list-style: none;
-    p
+
+
+.counter {
+    display: flex;
+}
+
+p {
+    font-size: 30px;
+}
+.js-increment,
+.js-decrement {
+    font-size: 30px;
+    margin: 20px;
+    padding: 40px 50px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+}
+
+.js-increment:hover,
+.js-decrement:hover {
+    background-color: rgb(205, 215, 255);
 }

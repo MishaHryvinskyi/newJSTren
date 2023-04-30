@@ -286,13 +286,13 @@
 //  }, {});
 //  console.log("tagsStats", tagsStats);
 
-const numbers = [1, 9, 6, 2, 3];
-numbers.sort();
-console.log("numbers", numbers);
+// const numbers = [1, 9, 6, 2, 3];
+// numbers.sort();
+// console.log("numbers", numbers);
 
-const letters = ['b', 'B', 'a', 'A'];
-letters.sort();
-console.log("letters", letters);
+// const letters = ['b', 'B', 'a', 'A'];
+// letters.sort();
+// console.log("letters", letters);
 
 
 
