@@ -36,12 +36,50 @@
 
 
 
-const list = document.querySelector(".menu");
+// const list = document.querySelector(".menu");
 
-const newTechnologies = ["React", "TypeScript", "Node.js"];
-const markup = newTechnologies
-  .map((technology) => `<li class="list-item new">${technology}</li>`)
-  .join("");
+// const newTechnologies = ["React", "TypeScript", "Node.js"];
+// const markup = newTechnologies
+//   .map((technology) => `<li class="list-item new">${technology}</li>`)
+//   .join("");
 
-list.insertAdjacentHTML("beforeend", markup);
-list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
+// list.insertAdjacentHTML("beforeend", markup);
+// list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
+
+ const magicBtn = document.querySelector('.js-magic-btn');
+
+// magicBtn.addEventListener('click', () => {
+//   const navEl = document.querySelector('.menu')
+// console.log(navEl)
+// const navItem = document.querySelectorAll('.menu-item');
+// console.log(navItem);
+// })
+
+const imageEl = document.querySelector('.hero__image');
+imageEl.alt ='Це Катя!';
+
+magicBtn.addEventListener('click', () => {
+  imageEl.src = 'https://scontent.flwo4-2.fna.fbcdn.net/v/t1.6435-9/118516277_714405615777388_7029838492332625200_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=84a396&_nc_ohc=gKGRtTD7kWgAX_eMAMM&_nc_ht=scontent.flwo4-2.fna&oh=00_AfCeLz3Btw9okP0tl8tEccunq1ktGTV_aB1lZD9UCapkAg&oe=6478F43A';
+  imageEl.alt = "Це файна качеча!"
+  heroTitle.textContent = "Це Пташка!";
+  console.log(heroTitle.textContent);
+  document.body.style.backgroundColor = "purple";
+  console.log(document.body.style.backgroundColor);
+  const inputEL = document.querySelector('.js-input');
+  console.log(inputEL.value);
+  const inputValue = document.createElement('h2');
+  inputValue.textContent =  inputEL.value;
+  inputEL.prepend('.js-input');
+});
+
+const heroTitle = document.querySelector('.hero__title');
+heroTitle.textContent = "Це Катічка!";
+
+
+// imageEl.removeAttribute('src');
+ 
+const actions = document.querySelectorAll('.js-actions button');
+// console.log(actions[0].dataset.action);
+// console.log(actions[1].dataset.action);
+// console.log(actions[2].dataset.action);
+
