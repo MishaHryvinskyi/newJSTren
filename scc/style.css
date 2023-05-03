@@ -3,8 +3,15 @@
     flex-wrap: wrap;
 }
 
+ul {
+    list-style: none;
+    padding: 0px;
+}
 
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .counter {
     display: flex;
 }
@@ -27,4 +34,41 @@ p {
 }
 .accent {
     color: #ffffff;
+}
+
+
+.site-nav__item--current {
+    color: tomato;
+}
+
+.site-nav__item--currents {
+    color: blue;
+}
+
+.site-nav__item--currents:hover {
+    color: rgb(26, 255, 0);
+}
+
+.ptashka {
+    color:rgb(27, 102, 172);
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.item1 {
+    margin-right: 20px;
+}
+
+button {
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
 }
