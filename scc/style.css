@@ -3,10 +3,9 @@
     flex-wrap: wrap;
 }
 
-ul {
-    list-style: none;
+/* ul {
     padding: 0px;
-}
+} */
 
 a {
     text-decoration: none;
@@ -66,6 +65,7 @@ button {
     padding: 10px 30px;
     border-radius: 20px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 button:hover {

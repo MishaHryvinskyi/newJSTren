@@ -35,7 +35,6 @@
 // console.log("Значення value:", idSelector.value);
 // console.log('wr:', idSelector.textContent);
 
-
 // const allSelectors = document.querySelectorAll("li");//знаходить псевдомасив всіх елементів за імям тегу lі
 // console.log(allSelectors);
 // idSelector.classList.add("first-child");
@@ -91,7 +90,87 @@
 //     root.appendChild(we);
 // });
 
-const actions = document.querySelectorAll('.js-action button');
-console.log(actions[2].dataset.action);
-console.log(actions[1].getAttribute('data-action'));
+// const actions = document.querySelectorAll('.js-action button');
+// console.log(actions[2].dataset.action);
+// console.log(actions[1].getAttribute('data-action'));
+// console.log(actions[0].getAttribute('data-action'));
+
+// const navEl = document.querySelector(".site-nav");
+// const firstNavItem = navEl.querySelector('.site-nav__item');
+// const firstChi = navEl.lastElementChild;
+// // console.log(firstNavItem);
+// // console.log(firstChi);
+// // console.log(navEl);
+
+// const navItemEle = document.createElement('li');
+// navItemEle.classList.add('site-nav__item');
+
+// const navLinlEle = document.createElement('a');
+// navLinlEle.textContent = "Особистий кабінет";
+// navLinlEle.classList.add('site-nav__link');
+// navLinlEle.href = "/hovever";
+
+// navItemEle.appendChild(navLinlEle);
+
+// console.log(navItemEle);
+
+// navEl.insertBefore(navItemEle, navEl.children[3]);
+
+// const rootEl = document.querySelector('.root');
+
+// const titleEl = document.createElement('h1');
+// titleEl.textContent = 'Кулюрина';
+// titleEl.classList.add('title')
+
+// const imgEl = document.createElement("img");
+// imgEl.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSieGfaDok9Ca2qZlrVV7O_5-y3eNWzCZEdg&usqp=CAU";
+// imgEl.alt = "Кераміка";
+// imgEl.width = "200";
+
+// // rootEl.appendChild(titleEl);
+// // rootEl.appendChild(imgEl);
+
+// rootEl.append(titleEl, imgEl);
+
+
+const colorPickerOptions = [
+    { label: 'red', color: '#F44336' },
+    { label: 'green', color: '#4CAF50' },
+    { label: 'blue', color: '#2196F3' },
+    { label: 'grey', color: '#607D8B' },
+    { label: 'pink', color: '#E91E63' },
+    { label: 'indigo', color: '#3F51B5' },
+];
+
+const buttonEl = document.createElement('button');
+buttonEl.type = "button";
+buttonEl.textContent = colorPickerOptions[1].label;
+buttonEl.style.backgroundColor = colorPickerOptions[1].color;
+
+console.log(buttonEl);
+
+const colorPickerEl = document.querySelector('.color-picker');
+
+// colorPickerEl.appendChild(buttonEl);
+
+const makeColorPicker = colorPickerOptions
+.map(colorPick => 
+`<button style=" background-color: ${colorPick.color}" type="button" >${colorPick.label}</button>`)
+.join('');
+
+colorPickerEl.insertAdjacentHTML("beforeend", makeColorPicker);
+
+const picturesData = [
+    {src: 'https://scontent.flwo4-2.fna.fbcdn.net/v/t39.30808-6/321794226_1561818460897261_1861313448952813905_n.jpg?_nc_cat=100&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=TdgVtjd6rB8AX8aOnJZ&_nc_ht=scontent.flwo4-2.fna&oh=00_AfDsOUPv8FYUSLT4eYpteHKMwP9mBQ6g7jxccG9KUFnn_g&oe=64C29739', alt: 'Різдвяник'},
+    {src: 'https://scontent.flwo4-2.fna.fbcdn.net/v/t31.18172-8/28164780_2505082656383782_157716473639173224_o.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=84a396&_nc_ohc=NKBmOIkGVH8AX9WTI8D&_nc_ht=scontent.flwo4-2.fna&oh=00_AfBnl_lkVXXDqacwe6Yty08cS551g9zMk5uZSpDCbiv8VQ&oe=64E50CC3', alt: 'Шлях'},
+    {src: 'https://scontent.flwo4-2.fna.fbcdn.net/v/t39.30808-6/313203111_4077233002502065_8750628107843701626_n.jpg?_nc_cat=106&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=aNQZgGX3qfkAX8nGxkQ&_nc_ht=scontent.flwo4-2.fna&oh=00_AfBVmCzUn3LNvgFfntxAUWUjX0qYjfTsLnOhq0JWZZ4L1w&oe=64C37867', alt: 'три'},
+    {src: 'https://scontent.flwo4-2.fna.fbcdn.net/v/t1.6435-9/31682413_2554601674765213_5916495472339451904_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=730e14&_nc_ohc=-74H-4c4hrsAX8QuVWO&_nc_ht=scontent.flwo4-2.fna&oh=00_AfDr04fJ62pa5blRFetGw7Glim9dMJnTziPOa1WQ22Y5ig&oe=64E52023', alt: 'лч'},
+];
+
+const makePhoto = picturesData
+    .map(pik =>
+    `<li><img src="${pik.src}" alt="${pik.alt}" width="300"></li>`)
+    .join('');
+
+    colorPickerEl.insertAdjacentHTML("beforeend", makePhoto);
 
