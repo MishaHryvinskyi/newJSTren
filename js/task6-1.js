@@ -132,7 +132,6 @@
 
 // rootEl.append(titleEl, imgEl);
 
-
 const colorPickerOptions = [
     { label: 'red', color: '#F44336' },
     { label: 'green', color: '#4CAF50' },
@@ -173,4 +172,48 @@ const makePhoto = picturesData
     .join('');
 
     colorPickerEl.insertAdjacentHTML("beforeend", makePhoto);
+
+const product = {
+    name: "Сервопроводи",
+    description: 
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex assumenda minus commodi saepe ea mollitia consequatur deserunt rerum provident itaque, voluptas velit nihil, nam excepturi id hic magni dolorum iste.",
+    price: 2000,
+    available: true,
+    onSale: true,
+};
+
+
+// const marcupProduct = `
+// <article class="product">
+//     <h2 class="product__name">${product.name}</h2>
+//     <p class="product__descr">${product.description}</p>
+//     <p class="product__price">${product.price}</p>
+// </article>
+// `;
+
+// colorPickerEl.insertAdjacentHTML("beforeend", marcupProduct);
+
+const { name, description, price } = product;
+
+
+
+const productArticleEl = document.createElement('article');
+productArticleEl.classList = "product";
+
+const productTitleEl = document.createElement('h2');
+productTitleEl.textContent = name;
+productTitleEl.classList = "product__name";
+
+const productParagraphEl = document.createElement('p');
+productParagraphEl.textContent = description;
+productParagraphEl.classList = "product__descr";
+
+const productPriceEl = document.createElement('p');
+productPriceEl.textContent = `Ціна: ${price} грн`;
+productPriceEl.classList = "product__price";
+
+productArticleEl.append(productTitleEl, productParagraphEl, productPriceEl);
+console.log(productArticleEl);
+
+colorPickerEl.append(productArticleEl);
 
