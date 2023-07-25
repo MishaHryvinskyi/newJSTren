@@ -47,23 +47,94 @@
 //   console.log(e.code);
 // });
 
-const targetBtn = document.querySelector('.js-target-btn');
-const addListenerBtn = document.querySelector('.js-add-listener');
-const removeListenerBtn = document.querySelector('.js-remove-listener');
+// =====================Вішаємо слухачі подій==========================
+// const targetBtn = document.querySelector('.js-target-btn');
+// const addListenerBtn = document.querySelector('.js-add-listener');
+// const removeListenerBtn = document.querySelector('.js-remove-listener');
 
 
-addListenerBtn.addEventListener('click', () => {
-  console.log('вішаю слухача подій на цільову кнопку');
+// addListenerBtn.addEventListener('click', () => {
+//   console.log('вішаю слухача подій на цільову кнопку');
 
-  targetBtn.addEventListener('click', onTargetBtnClick)
-});
+//   targetBtn.addEventListener('click', onTargetBtnClick)
+// });
 
-removeListenerBtn.addEventListener('click', () => {
-  console.log('знімаю слухача подій');
+// removeListenerBtn.addEventListener('click', () => {
+//   console.log('знімаю слухача подій');
 
-  targetBtn.removeEventListener('click', onTargetBtnClick)
-})
+//   targetBtn.removeEventListener('click', onTargetBtnClick)
+// })
   
-function onTargetBtnClick() {
-  console.log("Клік по цільовій кнопці");
-};
+// function onTargetBtnClick() {
+//   console.log("Клік по цільовій кнопці");
+// };
+
+
+// =====================Слухачі Форми==========================
+// const formEl = document.querySelector('.js-register-form');
+
+// formEl.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) {
+//   event.preventDefault();
+
+//   const formElements = event.currentTarget.elements;
+
+//   const mail = formElements.email.value;
+//   const password = formElements.password.value;
+//   const subscription = formElements.subscription.value;
+
+//   const formData = {
+//     mail,
+//     password,
+//     subscription,
+//   };
+
+//   console.log(formData);
+// };
+// function onFormSubmit(event) {
+//   event.preventDefault();
+
+//   const formData = new FormData(event.currentTarget);
+  
+//   formData.forEach((value, name) => {
+//     console.log('Name:', name);
+//     console.log("Value:", value);
+//   });
+// };
+
+// ===================Події Інпуту============================
+
+// const refs = {
+//   input: document.querySelector('.js-input'),
+//   nameLabel: document.querySelector('.js-button > span'),
+//   license: document.querySelector('.js-licence'),
+//   btn: document.querySelector('.js-button'),
+// };
+
+// refs.input.addEventListener('focus', onInputFocus);
+// refs.input.addEventListener('blur', onInputBlur);
+// refs.input.addEventListener('change', onInputChange);
+// refs.input.addEventListener('input', onInputChange);
+// refs.input.addEventListener('input', onInputChange);
+// refs.license.addEventListener('change',onLicenceChange);
+
+// function onInputChange(e) {
+//   console.log(e.currentTarget.value);
+//   refs.nameLabel.textContent = e.currentTarget.value;
+// };
+
+// function onInputFocus() {
+//   console.log('інпут отримє фокус події');
+// };
+
+// function onInputBlur() {
+//   console.log("інпут отримує блюр");
+// };
+
+// function onLicenceChange(e) {
+//   refs.btn.disabled = !e.currentTarget.checked;
+// };
+
+// ====================Події клавіатури=========================
+
