@@ -151,20 +151,21 @@
 const refs = {
     openModalBtn: document.querySelector('[data-action="open-modal"]'),
     closeModalBtn: document.querySelector('[data-action="close-modal"]'),
-    backdrpp: document.querySelector('.js-backdrop'),
+    backdrop: document.querySelector('.js-backdrop'),
 };
 
+// деструктуризуємо обєкт refs
+const { openModalBtn,  closeModalBtn, backdrop } = refs;
+
 // додаємо слухача на кнопку відкрити
-refs.openModalBtn.addEventListener('click', omOpenModal);
+openModalBtn.addEventListener('click', onOpenModal);
 // додаємо слухача на кнопку закрити
-refs.closeModalBtn.addEventListener('click', onCloseModal);
+closeModalBtn.addEventListener('click', onCloseModal);
 // додаємо слухача на backdrop
-refs.backdrpp.addEventListener('click', onBackdropClick);
-
-
+backdrop.addEventListener('click', onBackdropClick);
 
 // функція для відкриття модалки
-function omOpenModal() {
+function onOpenModal() {
     //вішаєм слухача подій на window при натисканні на кнопку Esc при відкритті модалки
     window.addEventListener('keydown', onEscapePress);
     //додаємо клас на body

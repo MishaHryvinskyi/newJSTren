@@ -154,3 +154,20 @@ body.show-modal .modal {
     background-color: yellowgreen;
     font-weight: 900;
 }
+
+.gallery {
+    display: flex;
+    list-style: none;
+}
+
+#validation-input {
+    border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+    border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+    border-color: #f44336;
+  }

@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="./scc/style.css">
 </head>
 <body>
-
-  <button type="button" class="button" data-action="open-modal">Відкрити модалку</button>
+  <ul id="ingredients"></ul>
+  <ul class="gallery"></ul>
+  <div id="counter">
+    <button type="button" data-action="decrement">-1</button>
+    <span id="value">0</span>
+    <button type="button" data-action="increment">+1</button>
+  </div>
+  <br>
+  <input type="text" id="name-input" placeholder="Please enter your name" />
+<h1>Hello, <span id="name-output">Anonymous</span>!</h1>
+<br>
+<input
+  type="text"
+  id="validation-input"
+  data-length="6"
+  placeholder="Please enter 6 symbols"
+/>
+<br>
+<input id="font-size-control" type="range" min="16" max="96" />
+<br />
+<span id="text">Abracadabra!</span>
+<!--modal-->
+  <!-- <button type="button" class="button" data-action="open-modal">Відкрити модалку</button>
   <div class="backdrop js-backdrop">
     <div class="modal">
       <h2>Modal window</h2>
@@ -18,7 +39,7 @@
         Закрити
       </button>
     </div>
-  </div>
+  </div> -->
   <!-- <label>
     Ім'я
     <input type="text" class="js-input" />
@@ -166,7 +187,8 @@
       </ul>
       <div class="color-picker js-color-picker"></div> -->
       <!-- <button class="Btns">me</button> -->
-      <script src="./js/task6-2.js" type="module"></script>
+      <script src="./js/task-practic6.js" type="module"></script>
+      <!-- <script src="./js/task6-2.js" type="module"></script> -->
       <!-- <script defer src="./js/task6-1.js" type="module"></script> -->
     <!-- <script src="./js/task6.js" type="module"></script> -->
     <!-- <script src="./js/task5-3.js" type="module"></script> -->
