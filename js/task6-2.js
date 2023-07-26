@@ -138,3 +138,62 @@
 
 // ====================Події клавіатури=========================
 
+// window.addEventListener('keydown', onKeypress);
+
+// function onKeypress(e) {
+//     console.log(e.key);
+//     console.log(e.code);
+// };
+
+// ====================Модальне вікно=========================
+
+// оолошуємо refs обєкт в якому знаходимо по data-атрибутах посилання на кнопки і бекдроп
+const refs = {
+    openModalBtn: document.querySelector('[data-action="open-modal"]'),
+    closeModalBtn: document.querySelector('[data-action="close-modal"]'),
+    backdrpp: document.querySelector('.js-backdrop'),
+};
+
+// додаємо слухача на кнопку відкрити
+refs.openModalBtn.addEventListener('click', omOpenModal);
+// додаємо слухача на кнопку закрити
+refs.closeModalBtn.addEventListener('click', onCloseModal);
+// додаємо слухача на backdrop
+refs.backdrpp.addEventListener('click', onBackdropClick);
+
+
+
+// функція для відкриття модалки
+function omOpenModal() {
+    //вішаєм слухача подій на window при натисканні на кнопку Esc при відкритті модалки
+    window.addEventListener('keydown', onEscapePress);
+    //додаємо клас на body
+    document.body.classList.add('show-modal');
+};
+
+// функція для закриття модалки
+function onCloseModal() {
+     //знімаємо слухача подій на window при натисканні на кнопку Esc при закритті модалки
+    window.removeEventListener('keydown', onEscapePress);
+    //знімаємо клас з body
+    document.body.classList.remove('show-modal');
+};
+
+//функція для закриття модалки при натисканні по бекдропу
+function onBackdropClick(event) {
+    //перевіряємо якщо користувач натиснув на бекдроп тоді знімаємо класс з боді
+    if (event.target === event.currentTarget) {
+        onCloseModal();//викликаємо функцю для закриття модалки
+    }
+};
+
+function onEscapePress(event) {
+    // оголошуємо константу для зберігання Esc
+    const ESC_KEY_CODE = 'Escape';
+    const isEscKey = event.code === ESC_KEY_CODE;
+    //перевіряємо якщо користувач натиснув кнопку "Escape" знімаємо класс з боді
+    if(isEscKey) {
+        onCloseModal();//викликаємо функцю для закриття модалки
+    }
+};
+
