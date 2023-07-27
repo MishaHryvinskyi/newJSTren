@@ -172,4 +172,19 @@ body.show-modal .modal {
     border-color: #f44336;
   }
 
-  
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: solid 2px saddlebrown;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tags-button--active {
+    font-weight: 600;
+    color: white;
+    background-color: #3f51b5;
+  }
