@@ -1,25 +1,25 @@
-.pics {
+/* .pics {
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
 /* ul {
     padding: 0px;
 } */
 
 
-a {
+/* a {
     text-decoration: none;
     color: inherit;
 }
 .counter {
     display: flex;
-}
+} */
 
-p {
+/* p {
     font-size: 30px;
-}
-.js-increment,
+} */
+/* .js-increment,
 .js-decrement {
     font-size: 30px;
     margin: 20px;
@@ -60,9 +60,9 @@ p {
 
 .item1 {
     margin-right: 20px;
-}
+} */
 
-button {
+/* button {
     padding: 10px 30px;
     border-radius: 20px;
     margin-right: 10px;
@@ -86,9 +86,9 @@ button:hover {
 .list {
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
-img {
+/* img {
     margin-right: 20px;
     border-radius: 80px;
 }
@@ -105,7 +105,7 @@ img {
     font-weight: 700;
     color: blue;
     background-color: yellow;
-}
+} */
 
 
 /* =================================000 */
@@ -161,7 +161,7 @@ body.show-modal .modal {
     list-style: none;
 }
 
-#validation-input {
+/* #validation-input {
     border: 3px solid #bdbdbd;
   }
   
@@ -182,15 +182,18 @@ body.show-modal .modal {
     width: 500px;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
-  .tags-button--active {
+  /* .tags-button--active {
     font-weight: 600;
     color: white;
     background-color: #3f51b5;
+  } */
+
+  body {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  
     .color-picker {
         display: grid;
         max-width: 1200px;
@@ -201,3 +204,34 @@ body.show-modal .modal {
         margin-right: auto;
         margin-left: auto;
     }   
+
+    .color-card {
+        padding: 5px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 
+        0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .color-card.is-active {
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    .color-swatch {
+        height: 128px;
+        cursor: pointer;
+    }
+
+    .color-meta {
+        padding: 10px;
+        font-weight: 700;
+    }
+
+    .color-meta p {
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: 0.1em;
+    }

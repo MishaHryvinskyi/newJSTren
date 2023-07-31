@@ -89,7 +89,26 @@ const colorPicker = document.querySelector('.color-picker');
 
 // colorPicker.insertAdjacentHTML("beforeend", colorPickerMarcup);
 
-console.log(createColorCardsMarcup(colors))
+colorPicker.addEventListener('click', onPaletClick);
+
+function onPaletClick(event) {
+   const isColorSwatchEl = !event.target.classList.contains('color-swatch');
+
+    if(isColorSwatchEl) {
+       return;
+    }
+
+    const currentActiveCard = document.querySelector('.color-card.is-active');
+    if(currentActiveCard) {
+        currentActiveCard.classList.remove('is-active');
+    }
+
+    const swatchEl = event.target;
+    const parentColorCard = swatchEl.closest('.color-card');
+    parentColorCard.classList.add('is-active')
+
+    document.body.style.backgroundColor = swatchEl.dataset.hex;
+}
 
 function createColorCardsMarcup(colors) {
     return colors.map(({ hex, rgb }) => { 
@@ -101,14 +120,15 @@ function createColorCardsMarcup(colors) {
                     data-rgb="${rgb}"
                     style="background-color: ${hex}"
                 >
-                    <div class="color-meta">
+                </div>
+                <div class="color-meta">
                         <p>HEX: ${hex}</p>
                         <p>RGB: ${rgb}</p>
                     </div>
-                </div>
             </div>`; 
         }).join('');
 };
 
-colorPicker.insertAdjacentHTML("beforeend", createColorCardsMarcup(colors))
+const cardMarkup = createColorCardsMarcup(colors);
+colorPicker.insertAdjacentHTML("beforeend", cardMarkup);
 
