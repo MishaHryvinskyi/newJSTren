@@ -98,17 +98,30 @@ function onPaletClick(event) {
        return;
     }
 
+    const swatchEl = event.target;
+    const parentColorCard = swatchEl.closest('.color-card');
+
+    removeActiveClass();
+
+    addActiveCardClass(parentColorCard);
+
+    setBodyBgColor(swatchEl.dataset.hex);
+};
+
+function removeActiveClass() {
     const currentActiveCard = document.querySelector('.color-card.is-active');
     if(currentActiveCard) {
         currentActiveCard.classList.remove('is-active');
     }
+};
 
-    const swatchEl = event.target;
-    const parentColorCard = swatchEl.closest('.color-card');
-    parentColorCard.classList.add('is-active')
+function setBodyBgColor(color) {
+    document.body.style.backgroundColor = color;
+};
 
-    document.body.style.backgroundColor = swatchEl.dataset.hex;
-}
+function addActiveCardClass(card) {
+    card.classList.add('is-active')
+};
 
 function createColorCardsMarcup(colors) {
     return colors.map(({ hex, rgb }) => { 
