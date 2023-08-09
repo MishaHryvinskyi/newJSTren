@@ -24,7 +24,7 @@ const refs = {
     input: document.querySelector('#filter'),
 };
 
-const { list, input, container } = refs;
+const { list, input } = refs;
 
 const listItemMarkup = createItemsMarkup(tech);
 
