@@ -198,3 +198,35 @@ function onEscapePress(event) {
     }
 };
 
+const fetchUsersBtn = document.querySelector(".btn1");
+const userList = document.querySelector(".user-list1");
+
+fetchUsersBtn.addEventListener("click", () => {
+  fetchUsers()
+    .then((users) => renderUserList(users))
+    .catch((error) => console.log(error));
+});
+
+function fetchUsers() {
+  return fetch("https://db-contacts-czrd.onrender.com/api/contacts").then(
+    (response) => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    }
+  );
+}
+
+function renderUserList(users) {
+  const markup = users
+    .map((user) => {
+      return `<li>
+          <p><b>Name</b>: ${user.name}</p>
+          <p><b>Email</b>: ${user.email}</p>
+          <p><b>Company</b>: ${user.phone}</p>
+        </li>`;
+    })
+    .join("");
+  userList.innerHTML = markup;
+}
