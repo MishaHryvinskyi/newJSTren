@@ -279,14 +279,89 @@
 
 // ======================================================
 
-
-const age = 10;
-const totalPrice = 200.74;
-const userName = 'Chelsy';
-const message = "Ласкаво просимо";
-const isOpen = true;
-const shouldConfirm = false;
+// const age = 10;
+// const totalPrice = 200.74;
+// const userName = 'Chelsy';
+// const message = "Ласкаво просимо";
+// const isOpen = true;
+// const shouldConfirm = false;
 
 // let salary = 1300.16472;
 // salary = Number(salary.toFixed(2));
 // console.log(salary);
+
+// const base = 2;
+// const power = 6;
+// const result = Math.pow(base, power)
+// console.log(result);
+// console.log(2 ** 5)
+
+//  напиши скрипт який просить користувача написати число і степінь, 
+
+// let num = prompt("Введіть число");
+// num = Number(num);
+// let power = prompt("Введіть до якої степені привести число");
+// power = Number(power);
+// console.log("число:", num)
+// console.log("степінь:", power)
+
+// const result = num ** power
+// console.log("результат:",result);
+
+// const max = 10;
+// const min = 9;
+
+// let mew = (Math.random() * (max - min) + min);
+// // mew = Number(mew.toFixed());
+// // console.log("десять чи девять?" ,mew);
+// const result = Math.round(mew);
+// console.log(result)
+
+const colors = ['tomato', 'teal', 'skyblue', 'deeppink', 'orange'];
+const max = colors.length - 1;
+const min = 0;
+const index = Math.round(Math.random() * (max - min) + min);
+const color = colors[index];
+document.body.style.backgroundColor = color;
+
+// const firstName = 'Me';
+// const lastName = 'ma';
+// const fullName = firstName + lastName;
+
+// console.log(fullName.toLocaleLowerCase())
+
+// const guest = "Mamumba";
+// const guestLastName = "Burasa";
+// const fullNames = guest + " " + guestLastName;
+// const number = 790;
+// const prime = "VIP";
+
+// const message1 = "Гість" + " " + guest + " " + guestLastName + " " + "Заселяється в номер" + " " + number + " " + "статусу" + " " + prime;
+// const message2 = "Гість " + guest + " " + guestLastName +  " Заселяється в номер "  + number +  " статусу "  + prime;
+// const message3 = `Гість ${fullNames} Заселяється в номер ${number} статусу ${prime}`;
+// console.log(message1)
+// console.log(message2)
+// console.log(message3)
+
+// let brand = "Samsung";
+// console.log(brand)
+// brand = brand.toLowerCase();
+// const inDataBase = "samsung";
+// console.log(brand)
+// console.log(brand === inDataBase)
+
+// let brand = 'SamSUNg';
+// brand = brand[0] + brand.slice(1).toLowerCase();
+// console.log(brand)
+
+const blacklistedWord1 = 'спам';
+const blacklistedWord2 = 'розпродажа';
+
+const string1 = 'Привіт, я принц Абдул, це 100% не спам, пропоную міліон!';
+const string2 = 'Сама найбільша РОЗПРОДАЖА на цьому тижні, не пропусти!';
+const string3 = 'Рекламна компанія #fatlivesmatter';
+
+console.log(string1.includes('спам'))
+const normalised  = string2.toLowerCase();
+console.log(normalised.includes('розпродажа'))
+
