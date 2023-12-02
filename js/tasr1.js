@@ -276,3 +276,15 @@
 //   message = 'Вам передзвонить менеджер';
 // }
 // console.log(message);
+
+// ======================================================
+
+const age = 10;
+const totalPrice = 200.74;
+const userName = 'Chelsy';
+const message = "Ласкаво просимо";
+const isOpen = true;
+const shouldConfirm = false;
+
+
+console.log(age.isPrototypeOf())
