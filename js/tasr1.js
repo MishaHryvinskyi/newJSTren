@@ -279,6 +279,7 @@
 
 // ======================================================
 
+
 const age = 10;
 const totalPrice = 200.74;
 const userName = 'Chelsy';
@@ -286,5 +287,6 @@ const message = "Ласкаво просимо";
 const isOpen = true;
 const shouldConfirm = false;
 
-
-console.log(age.isPrototypeOf())
+// let salary = 1300.16472;
+// salary = Number(salary.toFixed(2));
+// console.log(salary);
