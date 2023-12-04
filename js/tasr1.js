@@ -354,14 +354,54 @@ document.body.style.backgroundColor = color;
 // brand = brand[0] + brand.slice(1).toLowerCase();
 // console.log(brand)
 
-const blacklistedWord1 = 'спам';
-const blacklistedWord2 = 'розпродажа';
+// const blacklistedWord1 = 'спам';
+// const blacklistedWord2 = 'розпродажа';
 
-const string1 = 'Привіт, я принц Абдул, це 100% не спам, пропоную міліон!';
-const string2 = 'Сама найбільша РОЗПРОДАЖА на цьому тижні, не пропусти!';
-const string3 = 'Рекламна компанія #fatlivesmatter';
+// const string1 = 'Привіт, я принц Абдул, це 100% не спам, пропоную міліон!';
+// const string2 = 'Сама найбільша РОЗПРОДАЖА на цьому тижні, не пропусти!';
+// const string3 = 'Рекламна компанія #fatlivesmatter';
 
-console.log(string1.includes('спам'))
-const normalised  = string2.toLowerCase();
-console.log(normalised.includes('розпродажа'))
+// console.log(string1.includes('спам'))
+// const normalised  = string2.toLowerCase();
+// const isIncludesWord = normalised.includes(blacklistedWord2);
+// const isIncludesWord2 = string1.includes(blacklistedWord1);
+// console.log(isIncludesWord);
+// console.log(isIncludesWord2)
 
+// exemple 1 
+
+// const asked = prompt("яка офіційна назва JavaScript");
+// const message = asked === "ECMAScript" ? alert("Правильно!") : alert("Не знаєте? ECMAScript!");
+
+// примітивні типи даних - імутабельні типи даних
+// 1 Number
+// 2 String
+// 3 Boolean
+// 4 Undefined
+// 5 Null
+
+// example6 -метод рядків та чейнінг
+// Напиши срипт який розраховує індекс маси тіла людини для цього необхідно 
+// розділити вагу в кілограмах на квадрат висоти людини у метрах
+// Вага та висота зберігаються в змінних weight і height але не як числа а в вигляді рядків
+// ну цілі числа можуть бути задані у вигляді 24.5 або 24,7 , тобто як роздільник дробової частини може бути кома
+
+
+// let height = "1,75";
+// height = height.replace(',','.')
+// let weight = "88.3";
+
+// const bmi = Number((weight / height ** 2).toFixed(1));
+// console.log(bmi);
+
+// const incomingValue = 5;
+// const input = prompt('введіть')
+// const result = incomingValue + Number(input);
+
+// const defaultValue = 10;
+// const value = result || defaultValue;
+// console.log(value)
+
+let test = "dwa";
+const value = test ?? 'some value';
+console.log(value)
