@@ -402,6 +402,6 @@ document.body.style.backgroundColor = color;
 // const value = result || defaultValue;
 // console.log(value)
 
-let test = "dwa";
-const value = test ?? 'some value';
-console.log(value)
+// let test = "null";
+// const value = test ?? 'some value';
+// console.log(value)

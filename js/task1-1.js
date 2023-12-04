@@ -148,3 +148,63 @@
 // totalSpend += payment;
 // console.log('totalSpend:', totalSpend);
 
+// const stars = 5;
+// let price;
+
+// if (stars === 1 || stars === 2) {
+//     price = 10;
+// } else if (stars === 2 || stars === 3) {
+//     price = 20;
+// } else if (stars === 3 || stars === 4) {
+//     price = 30;
+// } else if (stars === 5) {
+//     price = 120;
+// } else {
+//     price = "такої кількості зірок немає";
+// }
+
+// console.log(price);
+
+// switch(stars) {
+//     case 1:
+//     case 2: 
+//     price = 10;
+//     break;
+    
+//     case 3: 
+//     case 4: 
+//     price = 30;
+//     break;
+
+//     case 5: 
+//     price = 120;
+//     break;
+//     default:
+//     console.log("такої кількості зірок немає")
+// }
+
+// console.log(price)
+
+// const option = 1;
+
+// let message ="";
+
+// switch(option) {
+//     case 1: 
+//     message ="Ви можете забрати товар завтра з 12:00 в нашому офісі";
+//     break;
+//     case 2:
+//     message = "Курєр доставить замовлення завтра з 9:00 по 18:00";
+//     break;
+//     case 3 : 
+//     message = 'Посилка буде відправлена сьогодні';
+//     break;
+//     default: {
+//         console.log("Вам зателефонує менеджер");
+//     }
+// }
+// console.log(message);
+
+for (let i = 0; i < 5;  ) {
+    
+}
