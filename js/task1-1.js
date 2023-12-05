@@ -390,14 +390,40 @@
 
 //   console.log("Trust me, this is not a spam message".includes("spam"))
 
- const str = "hello world";
+//  const str = "hello world";
 
-// for( let i = 0; i < str.length; i += 1 ){
-//     console.log(str[i])
+// // for( let i = 0; i < str.length; i += 1 ){
+// //     console.log(str[i])
+// // }
+
+// let i = 0;
+// // while(i < str.length) {
+// //     if (str[i] === "w") {
+// //         console.log('yes') 
+// //         break;
+// //     }
+// //     console.log('no', str[i]) 
+// //     i += 1;
+// // }
+
+// do {
+//     if (str[i] === "w") {
+//                  console.log('yes') 
+//                  break;
+//             }
+//             console.log("no")
+//     i +=1;
+// } while ( i < str.length)
+
+// const hours = 14;
+// const minutes = 0;
+// let timestring;
+
+// if (minutes) {
+//     timestring = `${hours} г. ${minutes} хв.`;
+// } else {
+//     timestring = `${hours} г.`;
 // }
 
-let i = 1;
-while(i < str.length) {
-    console.log(str[i]);
-    i += 1;
-}
+// console.log(timestring)
+
