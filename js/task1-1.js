@@ -205,7 +205,199 @@
 // }
 // console.log(message);
 
-for (let i = 0; i < 5; i += 1) {
-    console.log(i)
+// const minSalary = 500;
+// const maxSalary = 5000;
+// const employees = 4;
+// let totalSalary = 0;
+
+// for(let i = 1; i < employees; i += 1) {
+//     const salary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
+//     console.log(`Зп робітника ${i} - ${salary}`)
+
+//     totalSalary += salary;
+// }
+
+// console.log(totalSalary)
+
+// let balance = 10000;
+// const payment = 10001;
+
+// if (payment <= balance) {
+//     balance -= payment;
+// } else {
+//     console.log(`'Недостатньо коштів'`)
+// }
+
+// console.log(`число кредитів ${balance}`)
+
+//  let totalSpent = 4000;
+//  let payment = 1000;
+//  let discount = 0;
+ 
+
+//  if (totalSpent < 100) {
+
+//     console.log("не партнер, скидка 0%");
+
+//  } else if(totalSpent >= 100 && totalSpent < 1000) {
+
+//     console.log("бронзовий партнер, скидка 2%");
+//     discount = 0.02;
+
+//  } else if (totalSpent >= 1000 && totalSpent < 5000) {
+
+//     console.log('срібний партнер,скидка 5%');
+//     discount = 0.05;
+
+//  } else if (totalSpent >= 5000) {
+
+//     console.log("золотий партнер, скидка 10%");
+//     discount = 0.1;
+
+//  } else {
+
+//     discount = 0.1;
+//     console.log("Золотий партнерб, скидка 10%");
+
+//  }
+
+//  console.log(`Оформлюємо заказ на суму ${payment} зі знижкою ${discount * 100}%`);
+
+//  payment -= payment * discount;
+//  console.log(payment);
+
+//  totalSpent += payment;
+//  console.log(`загальна сума покупок ${totalSpent}`)
+
+// function getShippingCost(country) {
+//     let message;
+//     let cost;
+  
+//     switch(country) {
+//       case "China":
+//       cost = 100;
+//       message = `Shipping to ${country} will cost ${cost} 
+//       credits`;
+//       break;
+
+//       case "Chile":
+//       cost = 250;
+//       message = `Shipping to ${country} will cost ${cost} 
+//       credits`;
+//       break;
+
+//       case "Australia":
+//       cost = 170;
+//       message = `Shipping to ${country} will cost ${cost} 
+//       credits`;
+//       break;
+
+//       case "Jamaica":
+//       cost = 120;
+//       message = `Shipping to ${country} will cost ${cost} 
+//       credits`;
+//       break;
+
+//       default:
+//       message = "Sorry, there is no delivery to your country";
+//     }
+    
+//     return message;
+//   }
+
+  
+
+//   function getShippingCost(country) {
+//     let message;
+  
+//     switch(country) {
+//       case "China":
+//       message = 'Shipping to China will cost 100 credits';
+//       break;
+
+//       case "Chile":
+//       message = 'Shipping to Chile will cost 250 credits';
+//       break;
+
+//       case "Australia":
+//       message = 'Shipping to Australia will cost 170 credits';
+//       break;
+
+//       case "Jamaica":
+//       message = 'Shipping to Jamaica will cost 120 credits';
+//       break;
+
+//       default:
+//       message = "Sorry, there is no delivery to your country";
+//     }
+    
+//     return message;
+//   }
+
+//   console.log(getShippingCost("China"));
+//   console.log(getShippingCost("Chile"));
+//   console.log(getShippingCost("Australia"));
+//   console.log(getShippingCost("Jamaica"));
+
+// function getNameLength(name) {
+//     const message = `Name ${name} is ${name.length} characters long`; 
+  
+//     return message;
+//   }
+
+//   console.log(getNameLength("Устим"))
+//   console.log(getNameLength("Міша"))
+//   console.log(getNameLength("Катя"))
+
+// const courseTopic = "JavaScript essentials";
+// // Change code below this line
+
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopicLength - 1];
+
+// console.log(courseTopicLength);
+// console.log(firstElement);
+// console.log(lastElement);
+
+// function getSubstring(string, length) {
+//     const substring = string.slice(0, length); // Change this line
+  
+//     return substring;
+//   }
+
+//  console.log(getSubstring('Hello world', 3))
+
+// function checkForName(fullName, name) {
+//     const result = fullName.includes(name); // Change this line
+//      return result;
+//    }
+
+//    console.log(checkForName("Катя Тараскіна", "Катя"))
+
+// function checkForSpam(message) {
+//     let result;
+   
+//     result = message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale") ? true : false;
+
+//     return result;
+//   }
+  
+//   console.log(checkForSpam("Get best sale offers now!"));
+//   console.log(checkForSpam("JavaScript weekly newsletter"));
+//   console.log(checkForSpam("Amazing SalE, only tonight!"));
+//   console.log(checkForSpam("Trust me, this is not a spam message"));
+
+//   console.log("Trust me, this is not a spam message".includes("spam"))
+
+ const str = "hello world";
+
+// for( let i = 0; i < str.length; i += 1 ){
+//     console.log(str[i])
+// }
+
+let i = 1;
+while(i < str.length) {
+    console.log(str[i]);
+    i += 1;
 }
-console.log('QWE')
