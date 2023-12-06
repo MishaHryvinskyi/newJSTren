@@ -333,14 +333,43 @@
 // const deletedM = clients.splice(1,2);
 // console.log(clients);
 // console.log(deletedM);
-function checkStorage(available, ordered) {
 
-    if (ordered === 0) {
-      return "Your order is empty!";
-    } else if (ordered > available) {
-      return "Your order is too large, not enough goods in stock!";
-    }
-    return "The order is accepted, our manager will contact you";
-  }
+// function checkStorage(available, ordered) {
 
-  console.log(checkStorage(100, 130))
+//     if (ordered === 0) {
+//       return "Your order is empty!";
+//     } else if (ordered > available) {
+//       return "Your order is too large, not enough goods in stock!";
+//     }
+//     return "The order is accepted, our manager will contact you";
+//   }
+
+//   console.log(checkStorage(100, 130))
+  
+//  const friends = ["Poly", "Mango", "Kiwi", "Ajax",];
+// // console.table(friends);
+// // const lastIndex = friends.length - 1;
+// // console.log(lastIndex);
+
+// for (const friend of friends) {
+//   console.log("for", friend)
+// }
+// console.log("====")
+// for(let i = 0; i <= friends.length - 1; i += 1) {
+//   console.log("for...of",friends[i])
+// }
+
+// const cart = [54, 28, 105, 70, 92, 17, 120];
+// let totalCartSum = 0;
+// for(let i = 0; i < cart.length; i += 1) {
+//   // totalCartSum += cart[i]
+//   cart[i] *= 2;
+// }
+// console.log(cart)
+// console.log(totalCartSum)
+
+// for(const car of cart) {
+//   totalCartSum += car;
+// }
+// console.log("for...of", totalCartSum)
+
