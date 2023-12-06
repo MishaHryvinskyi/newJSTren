@@ -305,3 +305,42 @@
 // console.table(cards)
 
 
+// const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
+// console.log(clients[lastElementIndex]);
+
+// for(let i = 0; i < clients.length; i += 1) {
+//     console.log(clients[i])
+// }
+
+// const name = "Matata";
+// const splitName = name.split('');
+// console.log(splitName);
+
+// const mus = [];
+
+// for(const splitNam of splitName) {
+//     mus.push(splitNam)
+// }
+
+// console.log("mus", mus)
+// console.log(mus.join(""))
+
+// const words = ["Слава", "Ісусу", "Христу"];
+// console.log(words.join(""));
+// console.log(words.join(" "));
+// console.log(words.join("-"))
+
+// const deletedM = clients.splice(1,2);
+// console.log(clients);
+// console.log(deletedM);
+function checkStorage(available, ordered) {
+
+    if (ordered === 0) {
+      return "Your order is empty!";
+    } else if (ordered > available) {
+      return "Your order is too large, not enough goods in stock!";
+    }
+    return "The order is accepted, our manager will contact you";
+  }
+
+  console.log(checkStorage(100, 130))

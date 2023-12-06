@@ -427,3 +427,152 @@
 
 // console.log(timestring)
 
+// const userInput = prompt("Введіть число");
+// let message ='';
+// if (userInput > 0) {
+
+//     message = "Це позитивне число";
+// } else if (userInput < 0) {
+//     message = "Це негативне число"
+// } else  {
+//     message = "Це нуль"
+// }
+// console.log(message)
+
+// const userInput = Number(prompt("Введіть число"));// приводимо до числа бо в інакшому разі коли користувач введе 0 спрацює else if ("Це позитивне число")
+// if (!userInput) {
+//     console.log("Це нуль");
+// } else if (userInput > 0) {
+//     console.log("Це позитивне число");
+// } else  {
+//     console.log("Це негативне число");
+// }
+
+// const userInput = prompt("Введіть число");
+// let messeges;
+// // if(userInput % 2 === 0) {
+// //     console.log(`Ви ввели парне число а саме ${userInput}`);
+// // } else {
+// //     console.log(`Ви ввели непарне число а саме ${userInput}`);
+// // }
+
+// messeges = userInput % 2 === 0 ? `Ви ввели Парне число а саме ${userInput}` : `Ви ввели непарне число а саме ${userInput}`;
+// console.log(messeges)
+
+// const a = 120;
+// const b = 180;
+
+//  let biggerNumber;
+
+// // biggerNumber = a > b ? a : b;
+// // console.log("biggerNumber", biggerNumber)
+
+// if(a > 100 && b > 100) {
+//     console.log(biggerNumber = a > b ? a : b);
+// } else {
+//     console.log(b + 512)
+// }
+
+// let link = "https://my-site.com/about";
+
+// // const linkChange = link.length;
+// // const changesLink = link[linkChange - 0];
+
+// // if (changesLink === '/'){
+// //     console.log("посилання відмінне!")
+// //     console.log(link)
+// // } else {
+// //     link + "/";
+// //     console.log(link + "/")
+// // }
+
+// if (!link.endsWith('/')) {
+//     link += '/'
+// }
+// console.log(link);
+
+
+// let link = "https://somesite.com/about";
+
+// if (!link.endsWith('/') && link.includes("my-site")) {
+//         link += '/'
+//     }
+// console.log(link);
+
+// let link = "https://somesite.com/about";
+
+// link = link.includes("my-site") && !link.endsWith('/') ? link += '/' : link;
+// console.log(link);
+
+// const hours = 10;
+// if (hours < 17) {
+//     console.log("Pending");
+// } else if (hours >= 17 && hours <= 24) {
+//     console.log("Expires");
+// } else {
+//     console.log("Overdue")
+// }
+
+// const daysUntilDeadline = 0;
+
+// if (!daysUntilDeadline) {
+//     console.log("Сьогодні");
+// } else if (daysUntilDeadline === 1) {
+//     console.log("Завтра");
+// } else if (daysUntilDeadline === 2) {
+//     console.log("Післязавтра");
+// } else {
+//     console.log("Дата в майбутньому")
+// }
+
+// switch (daysUntilDeadline) {
+//     case 0 :
+//     console.log("Сьогодні");
+//     break;
+//     case 1 :
+//     console.log("Завтра");
+//     break; 
+//     case 2 :
+//     console.log("Післязавтра");
+//     break; 
+//     default :
+//     console.log("Дата в майбутньому")
+// }
+
+// const max = 100;
+// const min = 20;
+
+// // for(let i = min; i <= max; i += 5) {
+// //     console.log(i)
+// // }
+
+// for(let i = min; i >= min && i <= max; i += 1) {
+//     if (!(i % 5)) {
+//         console.log(i)
+//     }
+// }
+
+// const login = prompt('Введіть логін');
+
+// if (login === "Адмін") {
+//     const password = prompt("Введіть пароль");
+//     if(password === "я адмін") {
+//         console.log("Доброго дня!")
+//     } else {
+//         console.log("невірний пароль");
+//     }
+// } else if (login === "") {
+//     console.log("я вас не знаю");
+// } else {
+//     console.log("скасовано");
+// }
+
+// if (!login) {
+//         console.log("скасовано");
+// } else if (login === "Адмін") {
+//     const password = prompt("Введіть пароль");
+//     console.log(password === 'я адмін' ? "Доброго дня!" : "Невірний пароль");
+// } else {
+//     console.log("я вас не знаю");
+// }
+
