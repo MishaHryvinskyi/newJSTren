@@ -373,3 +373,177 @@
 // }
 // console.log("for...of", totalCartSum)
 
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// let totalW = 0;
+// let totalD = 0;
+// // for (let i = 0; i < numbers.length; i += 1) {
+// //     if(!(numbers[i] % 2)) {
+// //         total += numbers[i]
+// //     }
+// // }
+
+// // console.log(total)
+
+// for (const number of numbers) {
+//     if(!(number % 2)) {
+//         totalW += number;
+//     } else {
+//         totalD += number;
+//     }
+// }
+// console.log(totalD);
+// console.log(totalW);
+
+// const numbers = [51, 18, 13, 24, 7,  85, 19];
+// let smallNumber = numbers[0];
+
+// for(const number of numbers) {
+
+//     if(number < smallNumber) {
+//        smallNumber = number;
+//     }
+// }
+// console.log(smallNumber)
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// const message = friends.join(",");
+// console.log(message)
+
+// const string = 'JavaScript';
+
+// const letters = string.split('');
+// let inversLetter = '';
+
+// for(const letter of letters) {
+//     // if(letter === letter.toLowerCase()){
+//     //     inversLetter += letter.toUpperCase()
+//     // } else {
+//     //     inversLetter += letter.toLowerCase()
+//     // }
+//    letter === letter.toLowerCase() ? inversLetter += letter.toUpperCase() : inversLetter += letter.toLowerCase();
+// }
+// console.log(inversLetter)
+
+// const title = "Катерина зорро Австрійська кругляк";
+// const nam = title.toLowerCase().split(" ").join("=")
+// console.log(nam)
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+
+// const numbers = array1.concat(array2);
+
+// for(const number of numbers) {
+//     total += number
+// }
+// console.log(total)
+
+// const cards = ['1', '2', '3', '4', '5'];
+// // cards.splice(1,1)
+// cards.splice(3, 0, "makarena", "56");
+// cards.splice(4, 1, "daw")
+// console.log(cards);
+
+//  const arr = [1, 'Hello', null, true, [1, 2, 3]];
+//  const lastItemInArr = arr.length - 1;
+
+// //  for(let i = 0; i < arr.length; i += 1) {
+// //     if (Array.isArray(arr[i])) {
+// //         for(let j = 0; j < arr[i].length; j += 1) {
+// //             console.log("arr[4]", arr[i][j]);
+// //         }
+// //         continue;
+// //     }
+// //     console.log("arr", arr[i])
+// //  }
+
+// for(const item of arr) {
+//     for(const ite of arr[arr.length - 1]) {
+//         console.log(ite)
+//     }
+// }
+
+// function getExtremeElements(array) {
+//     return [array[0], array[array.length - 1]];
+// }
+
+// console.log(getExtremeElements([1, 2, 3, 4, 5]));
+// console.log(getExtremeElements(['daw', 'baw', 'qw', 'ew', 'ew', 'qw']));
+
+// function splitMessage(message, delimiter) {
+//     let words =  message.split(delimiter);
+//     return words;
+//   }
+//   console.log(splitMessage('best_for_week', '_'))
+
+// const array = [1, "Hello", null, true, [1, 2, 3]];
+// // перебирання масиву циклом while
+// let i = 0;
+// while(i < array.length) {
+//     if (typeof array[i] === "string") {
+//         array[i] = "Чупакабра!";
+//     }
+//     i += 1;
+// }
+
+// console.log(array);
+
+// const arr = [1, 2, 3];
+// arr.length = 4;
+// console.log(arr)
+
+// for(const ar of arr) {
+//     console.log(ar)
+// }
+
+// const str = "Hello world";
+// const arr = str.split(" ").reverse().join(" ");
+// console.log(str)
+// console.log(arr)
+
+// const arr = ['hello', 'world'];
+// const idx = arr.indexOf('world')
+// console.log(idx)
+
+// const idxs = arr.includes('world');
+// console.log(idxs);
+
+// const array = ['hello', 'world', 'JS'];
+// // push pop
+// // array.push('Так');
+// // array.pop();
+// // // shift unshift
+// // array.unshift('так',[1, 2], false);
+// // // array.shift();
+// // console.log(array);
+// // // slice
+// // const result = array.slice(1, 3)
+// // console.log(result)
+// // console.log("2",array);
+// // splice 
+// // console.log(array);
+// // array.splice(1,1)
+// // console.log(array);
+// // array.splice(1,1, "from","react","node")
+// // console.log(array);
+// const idx = array.indexOf("world");
+// const result = array.splice(idx, 1, "Макарена");
+// console.log(array);
+// console.log(result);
+
+// const arr1 = [1, 2, 3, 4];
+// const arr2 = [5, 6, 7, 8];
+// const arrConcat = arr1.concat(arr2);
+// console.log(arrConcat)
+
+// const genres = ["Jazz", "Blues"];
+// console.log(genres)
+// genres.push("Рок-н-рол");
+// console.log(genres[0]);
+// console.log(genres[genres.length - 1]);
+// const first = genres.shift();
+// console.log(first);
+// console.log(genres);
+// genres.unshift("Country", "Reggae");
+// console.log(genres);
