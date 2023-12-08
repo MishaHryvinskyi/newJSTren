@@ -274,3 +274,10 @@
 // console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));// [15, 30]
 // console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));// [200]
 
+// const add = function(a, b) {
+//     console.log(a * b)
+// }
+
+// add(2, 3);
+ 
+

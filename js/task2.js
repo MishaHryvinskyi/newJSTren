@@ -538,12 +538,107 @@
 // console.log(arrConcat)
 
 // const genres = ["Jazz", "Blues"];
-// console.log(genres)
-// genres.push("Рок-н-рол");
-// console.log(genres[0]);
-// console.log(genres[genres.length - 1]);
-// const first = genres.shift();
+// console.log(genres);
+// // genres.push("Рок-н-рол");
+// // console.log(genres[0]);
+// // console.log(genres[genres.length - 1]);
+// // const first = genres.shift();
+// // console.log(first);
+// // console.log(genres);
+// // genres.unshift("Country", "Reggae");
+// // console.log(genres);
+
+// genres.splice(genres.length, 0, "Рок-н-рол");
+// console.log(genres);
+// const first = genres.splice(0, 1);
+// console.log(genres);
 // console.log(first);
+// genres.splice(genres.length, 2, "Country", "Reggae");
 // console.log(genres);
-// genres.unshift("Country", "Reggae");
-// console.log(genres);
+
+
+// const value = '8 11';
+// const arrayValues = value.split(" ");
+// console.log(arrayValues);
+// let squareTotal = 0;
+// const firstItem = Number(arrayValues[0]);
+// const lastItem = Number(arrayValues[1]);
+
+// squareTotal += firstItem * lastItem;
+// console.log(squareTotal);
+
+// const fruits = ['apple', 'grape', 'peach', 'banana', 'lemon'];
+
+// for(let i = 0; i < fruits.length; i += 1) {
+//     console.log(i+1,fruits[i])
+// }
+// for(let i = 0, n = 1; i < fruits.length; i += 1, n += 1) {
+//     console.log(n,fruits[i]);
+// }
+
+// Напиши скрипт,який виводить у консоль імя та телефонний номер користувача.
+// У змінних names та phones зберігаються рядки імен та телефонних номерів у рядках на відповідність. 
+// Кількість імен та телефонів гарантовано одинакова
+// let names = "Sacob,William,Solovon,Artemis";
+// let phones = '89001234567,89001112233,89055566377,890055566300';
+
+// const nameArr = names.split(",");
+// console.log(nameArr);
+// const phoneArr = phones.split(",")
+// console.log(phoneArr);
+
+// for(let n = 0, p = 0; n< nameArr.length, p < phoneArr.length; n += 1, p += 1) {
+//     console.log(`Користувач ${nameArr[n]} з номером ${phoneArr[p]}`);
+// }
+
+// names = names.split(',');
+// phones = phones.split(',');
+// for(let i = 0; i < names.length, i < phones.length; i += 1) {
+//     console.log(`${names[i]} - ${phones[i]}`);
+// }
+
+// const string = 'Кількість імен та телефонів гарантовано одинакова';
+// const strArr = string.split(' ').slice(1, -1).join(" ");
+// console.log(strArr);
+// const result = strArr.slice(1, strArr.length-1).join(" ");
+// console.log(result);
+
+
+// Напиши скрипт який розвертає рядок зворотний напрямок букв і виводиь в консоль
+// const string = "Welcome to the future";
+
+// const result = string.split("").reverse().join('');
+// document.body.textContent = result;
+// console.log(result);
+
+// Сортування масиву із циклом. Напиши скрипт сортування масиву рядків в 
+// алфавітному порядку за першою літерою елемента
+// const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
+
+// // оголошуємо цикл for і перебираємо увесь масив
+// for(let i = 0; i < langs.length; i += 1) {
+//     // перевіряємо чи перша літера більна ніж на поточній ітерації
+//     if (langs[0] > langs[i]) {
+//         // вирізаємо перший елемент
+//         const result = langs.splice(i, 1)[0];
+//         // після ого додаємо на перше місце,по черзі в масив слова перша буква яких з кінця алфавіту 
+//         langs.unshift(result);
+//         console.log(langs);
+//     }
+// }
+
+// Напиши скрипт пошуку найменшого числа у масиві
+// const numbers = [2, 14, 94, 1, 23, 37];
+// let min = numbers[0];
+// let max = numbers[0];
+
+// for(const number of numbers) {
+//     if(number < min) {
+//         min = number;
+//     }
+//     if(number > max) {
+//         max = number;
+//     }
+// }
+// console.log(min);
+// console.log(max);
