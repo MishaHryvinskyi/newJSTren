@@ -417,23 +417,180 @@
 // console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));
 // console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
 
-const arr = [1, 2, 3, 4];
-const arr1 = [5, 6, 7, 8];
-const arr2 = [8, 9, 10, 11];
+// const arr = [1, 2, 3, 4];
+// const arr1 = [5, 6, 7, 8];
+// const arr2 = [8, 9, 10, 11];
 
-for(let i = 0; i < arr.length; i += 1) {
-    arr[i] = arr[i] * 2;
-}
+// for(let i = 0; i < arr.length; i += 1) {
+//     arr[i] = arr[i] * 2;
+// }
 
-const calculeteArr = function (arr) {
-    let sunArr = 0;
-    for(let i = 0; i < arr.length; i += 1) {
-        arr[i] * 2;
-        sunArr += arr[i]
-    }
-    return sunArr;
-}
+// const calculeteArr = function (arr) {
+//     let sunArr = 0;
+//     for(let i = 0; i < arr.length; i += 1) {
+//         arr[i] * 2;
+//         sunArr += arr[i]
+//     }
+//     return sunArr;
+// }
 
-console.log(calculeteArr(arr));
-console.log(calculeteArr(arr1));
-console.log(calculeteArr(arr2));
+// console.log(calculeteArr(arr));
+// console.log(calculeteArr(arr1));
+// console.log(calculeteArr(arr2));
+
+// function findLongestWord(string) {
+//     const arr = string.split(" ");
+//     let biggerLetter = '';
+
+//     for(const item of arr) {
+//         if( item.length > biggerLetter.length) {
+//             biggerLetter = item;
+//         };
+//     };
+//     return biggerLetter;
+// };
+
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+
+// function createArrayOfNumbers(min, max) {
+//     const numbers = [];
+//     for(let i = min; i <= max; i += 1) {
+//       numbers.push(i);
+//     }
+//     return numbers;
+//   }
+  
+//   console.log(createArrayOfNumbers(1, 6))
+
+// function filterArray(numbers, value) {
+//    const newArr = [];
+//    for(const number of numbers) {
+//     if(number > value) {
+//         newArr.push(number)
+//     }
+//    }
+//    return newArr
+//  };
+//  console.log(filterArray([1, 2, 3, 4, 5], 3));
+//  console.log(filterArray([1, 2, 3, 4, 5], 4));
+//  console.log(filterArray([1, 2, 3, 4, 5], 5));
+//  console.log(filterArray([12, 24, 8, 41, 76], 38))
+
+// function getCommonElements(array1, array2) {
+//     const w = []
+//     const b = array1.concat(array2);
+//     for(const item of b) {
+//         if(item === item) {
+//             console.log(item)
+//         }
+//     }
+    
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]))
+
+// https://codeguida.com/post/199
+
+// function createString(name, year) {
+//     const result = add(year);
+//     return `${name} years ${result}`
+// }
+
+// console.log(createString("Vohra", [1, 2, 3]));
+// console.log(createString("Gaba", [3, 2, 5]));
+// console.log(createString("Push-Push", [14, 4, 23]));
+
+// function add (arr) {
+//     let sum = 0;
+//     for(const num of arr) {
+//         sum += num;
+//     };
+//     return sum;
+// };
+
+// function calcBMI (weight, height) {
+//     weight = Number(weight.replace(",", "."));
+//     height = Number(height.replace(",", "."));
+//     return Number((weight / height ** 2).toFixed(1));
+// }
+
+// console.log((calcBMI('80', '1.82')));
+// console.log((calcBMI('92', '1,82')));
+// console.log((calcBMI('88,3', '1,75')));
+
+// function min (a, b) {
+//    return a < b ? a : b;
+// };
+
+// console.log(min(2, 5));
+
+// function getRectArea(dimensions) {
+//     dimensions = dimensions.split(" ");
+//     return Number(dimensions[0]) * Number(dimensions[1]);
+// };
+// console.log(getRectArea('8 11'));
+// console.log(getRectArea('20 40'));
+// console.log(getRectArea('5 10'));
+// console.log(getRectArea('46 11'));
+
+// function logItems(items) {
+//     for(let i = 0, n = 1; i < items.length; i += 1, n += 1) {
+//         console.log(`${n} - ${items[i]}`)
+//     }
+// };
+
+// console.log(logItems(["Mango", "Poly", "Ajax"]));
+
+// function printContactInfo (names, phones) {
+//     names = names.split(",");
+//     phones = phones.split(",");
+//     for(let i = 0; i < names.length, i < phones.length; i += 1) {
+//         console.log(`${names[i]} - ${phones[i]}`);
+//     };
+// };
+
+// console.log(printContactInfo(
+//     'Jacob,William,Solomon,Artemius', 
+//     "890012345,89001112233,890055566377,890055566300"
+//     ));
+
+// function findLargestNumber(number) {
+//     let biggerNumber = number[0];
+//     for(const num of number) {
+//         if(biggerNumber < num) {
+//             biggerNumber = num;
+//         }
+//     }
+//     return biggerNumber;
+// }
+
+// console.log(findLargestNumber([2, 17, 94, 1, 23, 37]));
+// console.log(findLargestNumber([49, 4, 7, 83, 12]));
+
+// function findLargestNumber() {
+
+//     let biggerNumber = arguments[0];
+
+//     for(const num of arguments) {
+//         if(biggerNumber < num) {
+//             biggerNumber = num;
+//         }
+//     }
+//     return biggerNumber;
+// }
+
+// console.log(findLargestNumber(2, 17, 94, 1, 23, 37));
+// console.log(findLargestNumber(49, 4, 7, 83, 12));
+
+// function calAverage () {
+    
+//     let sumArr = 0;
+//     for(const arg of arguments) {
+//         sumArr += arg
+//     }
+//     return sumArr / arguments.length
+// }
+
+// console.log(calAverage(1, 2, 3, 4));
+// console.log(calAverage(14, 8, 2));
+// console.log(calAverage(27, 43, 2, 8, 36));
+
