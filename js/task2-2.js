@@ -594,3 +594,53 @@
 // console.log(calAverage(14, 8, 2));
 // console.log(calAverage(27, 43, 2, 8, 36));
 
+
+// Напиши функцію formatTime(minute) яка переведе значення minutes (кількість хвилин)
+// у рядок у форматі години і хвилини HH:MM
+// function formatTime(minute) {
+
+//     const hours = Math.floor(minute / 60);
+//     minute = minute % 60;
+//     return `${hours.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`
+// }
+// console.log(formatTime(70));
+// console.log(formatTime(450));
+// console.log(formatTime(1441));
+
+// Напиши функції длф роботи з колекцією навчальних курсів courses:
+// addCourse(name) -додає курс до кінця колекції
+// removeCourse(name) - видаляє курс із колекції
+// updateCourse(name) - змінює імя на нове
+
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+// function addCourse(name) {
+//     if(courses.includes(name)) {
+//         return "Ви вже маєте такий курс";
+//     };
+//     return courses.push(name);
+// };
+
+// function removeCourse(name) {
+//     if(courses.includes(name)) {
+//         const find = courses.indexOf(name);
+//         courses.splice(find, 1);
+//         return;
+//     }; 
+//     return "Такого курсу немає";
+// };
+
+// function updateCourse(oldName, newName) {
+//     if(courses.includes(oldName)) {
+//         const find = courses.indexOf(oldName);
+//         courses.splice(find, 1, newName);
+//         return;
+//     }; 
+//     return "Такого курсу немає";
+// };
+
+// console.log(addCourse('Express'));
+// updateCourse("CSS", "NodeJS");
+// removeCourse('React');
+
+// console.log(courses);
