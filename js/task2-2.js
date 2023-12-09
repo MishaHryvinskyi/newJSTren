@@ -278,6 +278,162 @@
 //     console.log(a * b)
 // }
 
-// add(2, 3);
- 
+// add(2, 3); 
 
+// const fnA = function () {
+// console.log("Виклик функції A");
+// fnB();
+// };
+// const fnB = function () {
+// console.log("Виклик функції B");
+// fnC();
+// };
+// const fnC = function () {
+// console.log("Виклик функції C");
+// console.log(value);
+// };
+// fnA();
+
+// const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+
+// const calculateTotalPrice = function (item) {
+//     let total = 0;
+//     for(const value of item) {
+//         total += value;
+//     }
+//     return total;
+// }
+
+// console.log(calculateTotalPrice([2, 3, 4, 5, 6]))
+// console.log(calculateTotalPrice([54, 28, 105, 70, 92, 17, 120, 12, 25, 90]));
+
+// const logItems = function(items) {
+//     for(const value of items) {
+//        console.log(value)
+//     }
+// }
+
+// logItems(["Mango", "Kiwi", "Poly", "Ajax"]);
+// logItems([1, 2, 3, 4, 5,]);
+
+// const logins = ["m4ngoDoge", "k1widab3st", "poly1scute", "aj4xth3m4n"];
+
+// // const findLogin = function (allLogin, login) {
+// //     if(allLogin.includes(login)) {
+// //         return `Логін ${login} знайдено`;
+// //     }
+// //     return `логін ${login} не найдено`;
+// // };
+
+// const findLogin = function (allLogin, login) {
+//     return allLogin.includes(login)
+//     ? `Логін ${login} знайдено`
+//     : `логін ${login} не найдено`;
+// };
+
+// console.log(findLogin(logins, "m4ngoDoge"));
+// console.log(findLogin(logins, "k1widab3st"));
+// console.log(findLogin(logins, "makarena"));
+// console.log(findLogin(logins, "poly1scute"));
+
+// document.body.textContent = findLogin(logins, "m4ngoDoge");
+
+// const findSmallNumber = function (items) {
+//     let smallesnumber = items[0];
+
+//     for(const number of items) {
+//         if (number < smallesnumber) {
+//              smallesnumber = number;
+//         };
+//     };
+//     return smallesnumber;
+// };
+
+// console.log(findSmallNumber([41, 18, 13, 24, 7, 85, 19]))
+// console.log(findSmallNumber([5, 12, 122, 243, 7, -12, -91]))
+
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     let invertefString = "";
+
+//     for(const letter of letters) {
+//      const isInLowerCase = letter === letter.toLowerCase();
+
+//      invertefString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase();
+//     };
+
+//     return invertefString;
+// };
+
+// console.log(changeCase("КаТеРиНа"));
+// console.log(changeCase("MaNgO"));
+// console.log(changeCase("aJaX"));
+
+// const title = 'Top 10 benefits of React framework';
+
+// const slug = title.toLowerCase().split(" ").join("-");
+// console.log(slug);
+
+// const slugify = function (word) {
+//     return word.toLowerCase().split(" ").join("-");
+// }
+
+// console.log(slugify('Top 10 benefits of React framework'));
+// console.log(slugify("Катерина зорро Австрійська"));
+
+// const fn = function (...args) {
+//     console.log(arguments);
+//     console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// const add = function (...args) {
+//     console.log(args);
+//     let total = 0;
+//     for(const arg of args) {
+//         total += arg;
+//     };
+//     return total;
+// };
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4, 5, 6));
+
+// const filterNumbers = function(array, ...args) {
+//      const newArr = [];
+//      for(const arg of args) {
+//         if(array.includes(arg)) {
+//            newArr.push(arg)
+//         }
+//      }
+
+//      return newArr;
+// };
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+
+const arr = [1, 2, 3, 4];
+const arr1 = [5, 6, 7, 8];
+const arr2 = [8, 9, 10, 11];
+
+for(let i = 0; i < arr.length; i += 1) {
+    arr[i] = arr[i] * 2;
+}
+
+const calculeteArr = function (arr) {
+    let sunArr = 0;
+    for(let i = 0; i < arr.length; i += 1) {
+        arr[i] * 2;
+        sunArr += arr[i]
+    }
+    return sunArr;
+}
+
+console.log(calculeteArr(arr));
+console.log(calculeteArr(arr1));
+console.log(calculeteArr(arr2));
