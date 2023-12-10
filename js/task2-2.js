@@ -644,3 +644,58 @@
 // removeCourse('React');
 
 // console.log(courses);
+
+// function getCommonElements(array1, array2) {
+//     const newArr = [];
+//     for(const item of array1) {
+//         if(array2.includes(item)) {
+//             newArr.push(item);
+//         }
+//     }
+//     return newArr;
+// }
+
+//   console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+
+// function calculateTotalPrice(order) {
+//     let total = 0;
+    
+//     for(const item of order) {
+//         total += item
+//     }
+    
+//     return total;
+//   }
+
+//   console.log(calculateTotalPrice([12, 85, 37, 4]))
+
+// function filterArray(numbers, value) {
+   
+//     const filteredNumbers = [];
+  
+//     for(const item of numbers) {
+//         const number = item;
+  
+//       if (number > value) {
+//         filteredNumbers.push(number);
+//       }
+//     }
+    
+//     return filteredNumbers;
+//   }
+
+//   console.log(filterArray([1, 2, 3, 4, 5], 3))
+
+// Change code below this line
+
+function getEvenNumbers(start, end) {
+   const newArr = [];
+   for(let i = start; i <= end; i += 1) {
+    if(i % 2 === 0) {
+        newArr.push(i)
+    }
+   }
+   return newArr;
+}
+
+   console.log(getEvenNumbers(2, 5));
