@@ -385,24 +385,198 @@
 
 // ========================================================
 
-const user = {
-    name: 'Mango',
-    age: 20,
-    hobby: 'html',
-    premiun: true,
-};
+// const user = {
+//     name: 'Mango',
+//     age: 20,
+//     hobby: 'html',
+//     premiun: true,
+// };
 
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user['premiun'] = false;
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user['premiun'] = false;
 
-console.log(user);
+// console.log(user);
 
-for(const key in user) {
-    console.log(`${key} : ${user[key]}`)
-}
+// for(const key in user) {
+//     console.log(`${key} : ${user[key]}`)
+// }
 
 // const keys = Object.keys(user);
 // for(const key of keys) {
 //     console.log(`${key} : ${user[key]}`)
 // }
+// let sum = 0;
+
+// const salary = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130,
+// };
+
+// const salaryValues = Object.values(salary);
+// console.log(salaryValues);
+
+// for(const item of salaryValues) {
+//     sum += item;
+// }
+
+// console.log(sum)
+
+// for(const key in salary) {
+//     sum += salary[key];
+// }
+// console.log(sum)
+
+// напиши функцію calcTotalPrise(stones, stoneName), який приймає масив обєктів та рядок
+// з назвою каменю. Функція рахує і повертає загальну вартість каміння з таким імям, ціною та кількістю з обєкта
+
+// const stones = [
+//     {
+//         name: 'Смарагд',
+//         price: 1300,
+//         quantity: 4,
+//     },
+//     {
+//         name: 'Діамант',
+//         price: 2700,
+//         quantity: 3,
+//     },
+//     {
+//         name: 'Сапфір',
+//         price: 400,
+//         quantity: 7,
+//     },
+//     {
+//         name: 'Щебінь',
+//         price: 200,
+//         quantity: 2,
+//     },
+// ];
+
+// function calcTotalPrise(stones, stoneName) {
+//     let sum = 0;
+//     for(const stone of stones) {
+//         for(const key in stone) {
+//             if(stone[key] === stoneName) {
+//                 sum = stone['price'] * stone['quantity']
+//             }
+//         }
+//     }
+//     return sum;
+// }
+
+// function calcTotalPrise(stones, stoneName) {
+//     for(const stone of stones) {
+//         if(stone.name === stoneName) {
+//             return stone.price * stone.quantity;
+//         }
+//     }
+//     return "Такого каменю не має";
+// }
+
+// console.log("Сума за Смарагд",calcTotalPrise(stones, 'Смарагд'));
+// console.log("Сума за Сапфір",calcTotalPrise(stones, 'Сапфір'));
+// console.log("Сума за Діамант",calcTotalPrise(stones, 'Діамант'));
+// console.log("Сума за Щебінь",calcTotalPrise(stones, 'Щебінь'));
+// console.log(calcTotalPrise(stones, 'Псєчий'));
+
+// Example 4
+// Напиши скрипт управління особистим кабінетом інтернет банку. 
+// Є оюєкт account в якому необхідно реалізувати метод для роботи з балансом та історією транзакцій
+
+// типи транзакцій всбого два
+// можна покласти чи зняти гроші з рахунку
+
+const Transaction = {
+    DEPOSIT: 'deposit',
+    WITHDRAW: 'withdraw',
+};
+
+Object.freeze(Transaction);
+
+
+const account = {
+    // поточний баланс
+    balance:0,
+
+    // історія транзакцій
+    transactions: [],
+
+    // метод створює та повертає обєкт транзакції
+    // приймає суму та тип транзакції
+    createTransaction(amount, type) {
+        return {
+            id: Date.now(),
+            amount,
+            type,
+        }
+    },
+
+    // метод що відповідає за додавання суми до бфлфнсу.
+    // приймає суму транзакцій
+    // викликає createTransaction для створення обєкта транзакції
+    // після чого додає його до історії транзакцій
+    deposit (amount) {
+        if(amount <= 0) {
+            return "Error"
+        }
+        const item = this.createTransaction(amount, Transaction.DEPOSIT);
+        this.transactions.push(item);
+        this.balance += amount;
+    },
+    //метод що відповідає за зняття суми з балансу.
+    // приймає суму транзакцій
+    // викликає createTransaction для створення обєкта транзакції
+    // якщо amount більше ніж поточний баланс виводить повідомлення
+    // про те що зняття такої суми не можливу недостатньо коштів 
+    withdraw(amount) {
+        if(amount > this.balance || amount <= 0) {
+            return "недостатньо коштів";
+        }
+        const item = this.createTransaction(amount, Transaction.WITHDRAW);
+        this.transactions.push(item);
+        this.balance -= amount;
+    },
+
+    // метод повертає поточний баланс
+    getBalance() {
+        return this.balance;
+    },
+
+    // метод шукає та повертає обєкт транзакцій по id
+    getTransactionDetails(id) {
+        for(const transaction of this.transactions) {
+           if(transaction.id === id) {
+            return transaction
+           }
+        }
+        return "Empty"
+    },
+
+    // метод повертає кількість коштів певного типу транзакцій з усієї історії
+    getTransactionTotal(type) {
+        let sum = 0;
+        for(const transaction of this.transactions) {
+            if(transaction.type === type) {
+                sum += transaction.amount
+            }
+        }
+        return sum;
+    },
+};
+
+
+account.deposit(1000);
+account.deposit(1000);
+
+account.withdraw(260);
+account.withdraw(260);
+account.withdraw(260);
+
+account.deposit(1000);
+
+console.log(account.getBalance());
+
+console.log(account.getTransactionTotal('deposit'))
+console.log(account.getTransactionTotal('withdraw'))
