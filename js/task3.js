@@ -150,12 +150,12 @@
 
 // console.log(totalFeedback);
 
-const friends = [
-    { name: 'Mango', online: false },
-    { name: 'Kiwi', online: true },
-    { name: 'Poly', online: true },
-    { name: 'Ajax', online: false },
-];
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Ajax', online: false },
+// ];
 // console.table(friends);
 
 // const findFriendByName = function (allFriends, name) {
@@ -243,3 +243,145 @@ const friends = [
 //     total += el;
 // }
 // console.log(total);
+
+// const playlist = {
+//     name: "Мій супер плейліст",
+//     rating: 5,
+//     tracks: ['Numb', 'In TheEnd', 'Faint'],
+//     getName(newName) {
+//         this.name = newName
+//     },
+//     addTrack(newT) {
+//         this.tracks.push(newT);
+//     },
+//     getTrackCount() {
+//         return this.tracks.length;
+//     }
+// };
+
+// // const keys = Object.keys(playlist);
+// // console.log(keys)
+
+// // for(const key of keys) {
+// //     console.log(key)
+// //     console.log(playlist[key])
+// // }
+
+// const value = Object.values(playlist);
+// for(const val of value) {
+//     console.log(val)
+// }
+
+// const friends = [
+//     { name: "Mango", online: false },
+//     { name: "Kiwi", online: true },
+//     { name: "Poly", online: true },
+//     { name: "Ajax", online: false },
+// ];
+
+// const findFriendByName = function (allFriend, friendName) {
+
+//     for(const friend of allFriend) {
+//      console.log(friend);
+//      console.log(friend.name)
+//        if(friend.name === friendName) {
+//          return `Є такий друг ${friendName}`;
+//        }
+//     }
+//     return ` Такого друга ${friendName} немає`;
+//  };
+
+//  console.log(findFriendByName(friends, "Poly"));
+// const friendNameArr = [];
+// const getAllNames = function (allFriend) {
+    
+//     for(const friend of allFriend) {
+        
+//         friendNameArr.push(friend.name);
+//     }
+//     return friendNameArr;
+// }
+
+// getAllNames(friends);
+// console.log(friendNameArr);
+
+// const getOnlineFriends = function (allFriend) {
+//     const onlineFriends = [];
+//     for(const friend of allFriend) {
+//         if(friend.online) {
+//             onlineFriends.push(friend.name);
+//         }
+//     }
+//     return onlineFriends;
+// }
+
+// console.log(getOnlineFriends(friends));
+
+//  const getOnlineFriends = function (allFriend) {
+//     const friendsByStatus = {
+//         online: [],
+//         offline: [],
+//     };
+//     for(const friend of allFriend) {
+//         const key = friend.online ? "online" : "offline";
+//         friendsByStatus[key].push(friend);
+//     }
+//     return friendsByStatus;
+// }
+
+// console.log(getOnlineFriends(friends));
+
+const cart = {
+    item: [],
+    getItems() {},
+    add(product) {
+        this.item.push(product);
+    },
+
+    remove(productName) {
+        
+       for(const item of this.item) {
+        const removeItem = this.item.indexOf(item);
+        const idx = Object.values(item);
+
+        if(idx.includes(productName)) {
+            
+            this.item.splice(removeItem, 1);  
+        }
+       }
+    },
+
+    clear() {
+        this.item = [];
+    },
+
+    countTotalPrice() {
+        let total = 0;
+        for(const price of this.item) {
+            console.log(price)
+        }
+       
+       
+    }, 
+
+    increaseQuantity(productName) {},
+
+    decreaseQuantity(productName) {},
+};
+
+cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍓", price: 110 });
+
+console.log(cart.item);
+console.log(cart.remove("🍓"));
+console.log(cart.remove("🍇"));
+console.log(cart.remove("🍎"));
+console.log(cart.item);
+
+cart.add({ name: "🍓", price: 110 });
+console.log(cart.item);
+
+console.log(cart.countTotalPrice())
+

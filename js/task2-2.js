@@ -688,14 +688,14 @@
 
 // Change code below this line
 
-function getEvenNumbers(start, end) {
-   const newArr = [];
-   for(let i = start; i <= end; i += 1) {
-    if(i % 2 === 0) {
-        newArr.push(i)
-    }
-   }
-   return newArr;
-}
+// function getEvenNumbers(start, end) {
+//    const newArr = [];
+//    for(let i = start; i <= end; i += 1) {
+//     if(i % 2 === 0) {
+//         newArr.push(i)
+//     }
+//    }
+//    return newArr;
+// }
 
-   console.log(getEvenNumbers(2, 5));
+//    console.log(getEvenNumbers(2, 5));
