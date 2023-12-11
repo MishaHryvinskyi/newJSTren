@@ -331,57 +331,78 @@
 
 // console.log(getOnlineFriends(friends));
 
-const cart = {
-    item: [],
-    getItems() {},
-    add(product) {
-        this.item.push(product);
-    },
+// const cart = {
+//     item: [],
+//     getItems() {},
+//     add(product) {
+//         this.item.push(product);
+//     },
 
-    remove(productName) {
+//     remove(productName) {
         
-       for(const item of this.item) {
-        const removeItem = this.item.indexOf(item);
-        const idx = Object.values(item);
+//        for(const item of this.item) {
+//         const removeItem = this.item.indexOf(item);
+//         const idx = Object.values(item);
 
-        if(idx.includes(productName)) {
+//         if(idx.includes(productName)) {
             
-            this.item.splice(removeItem, 1);  
-        }
-       }
-    },
+//             this.item.splice(removeItem, 1);  
+//         }
+//        }
+//     },
 
-    clear() {
-        this.item = [];
-    },
+//     clear() {
+//         this.item = [];
+//     },
 
-    countTotalPrice() {
-        let total = 0;
-        for(const price of this.item) {
-            console.log(price)
-        }
-       
-       
-    }, 
+//     countTotalPrice() {
+//         let total = 0;
+//         for(const price of this.item) {
+//             console.log(price)
+//         }
+//     }, 
 
-    increaseQuantity(productName) {},
+//     increaseQuantity(productName) {},
 
-    decreaseQuantity(productName) {},
+//     decreaseQuantity(productName) {},
+// };
+
+// cart.add({ name: "🍎", price: 50 });
+// cart.add({ name: "🍋", price: 60 });
+// cart.add({ name: "🍇", price: 70 });
+// cart.add({ name: "🍓", price: 110 });
+
+// console.log(cart.item);
+// console.log(cart.remove("🍓"));
+// console.log(cart.remove("🍇"));
+// console.log(cart.remove("🍎"));
+// console.log(cart.item);
+
+// cart.add({ name: "🍓", price: 110 });
+// console.log(cart.item);
+
+// console.log(cart.countTotalPrice())
+
+// ========================================================
+
+const user = {
+    name: 'Mango',
+    age: 20,
+    hobby: 'html',
+    premiun: true,
 };
 
-cart.add({ name: "🍎", price: 50 });
-cart.add({ name: "🍋", price: 60 });
-cart.add({ name: "🍇", price: 70 });
-cart.add({ name: "🍓", price: 110 });
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user['premiun'] = false;
 
-console.log(cart.item);
-console.log(cart.remove("🍓"));
-console.log(cart.remove("🍇"));
-console.log(cart.remove("🍎"));
-console.log(cart.item);
+console.log(user);
 
-cart.add({ name: "🍓", price: 110 });
-console.log(cart.item);
+for(const key in user) {
+    console.log(`${key} : ${user[key]}`)
+}
 
-console.log(cart.countTotalPrice())
-
+// const keys = Object.keys(user);
+// for(const key of keys) {
+//     console.log(`${key} : ${user[key]}`)
+// }
