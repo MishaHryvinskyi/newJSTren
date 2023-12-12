@@ -567,16 +567,19 @@ const account = {
 };
 
 
-account.deposit(1000);
-account.deposit(1000);
+// account.deposit(1000);
+// account.deposit(1000);
 
-account.withdraw(260);
-account.withdraw(260);
-account.withdraw(260);
+// account.withdraw(260);
+// account.withdraw(260);
+// account.withdraw(260);
 
-account.deposit(1000);
+// account.deposit(1000);
 
-console.log(account.getBalance());
+// console.log(account.getBalance());
 
-console.log(account.getTransactionTotal('deposit'))
-console.log(account.getTransactionTotal('withdraw'))
+// console.log(account.getTransactionTotal('deposit'))
+// console.log(account.getTransactionTotal('withdraw'))
+
+
+
