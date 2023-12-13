@@ -334,10 +334,22 @@
 const cart = {
     item: [],
     getItems() {
-        return this.item;
+        const { item } = this;
+        return item;
     },
     add(product) {
-        this.item.push(product);
+        const { item } = this;
+        for(const ite of item) {
+            if(ite.name === product.name) {
+               ite.quantity += 1;
+               return;
+            }
+        }
+        const newProduct = {
+            ...product,
+            quantity: 1,
+        }
+        item.push(newProduct);
     },
 
     remove(productName) {
@@ -364,14 +376,17 @@ const cart = {
 
     countTotalPrice() {
         let total = 0;
-        for(const item of this.item) {
-            total += item.price
+        const{ item } = this;
+        for(const ite of item) {
+            const { price, quantity } = ite;
+            total += price * quantity;
         }
         return total;
     }, 
 
     increaseQuantity(productName) {
-        for(const ite of this.item) {
+        const{ item } = this;
+        for(const ite of item) {
             if(ite === productName) {}
         }
     },
@@ -379,25 +394,27 @@ const cart = {
     decreaseQuantity(productName) {},
 };
 
-cart.add({ name: "🍎", price: 50 });
+// cart.add({ name: "🍎", price: 50 });
 cart.add({ name: "🍋", price: 60 });
-cart.add({ name: "🍇", price: 70 });
-cart.add({ name: "🍓", price: 110 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍋", price: 60 });
+// cart.add({ name: "🍇", price: 70 });
+// cart.add({ name: "🍓", price: 110 });
 
 console.table(cart.getItems())
 
 console.table(cart.item);
 
-cart.remove("🍎");
-cart.remove("🍋");
+// cart.remove("🍎");
+// cart.remove("🍋");
 
 
 console.table(cart.getItems())
 
 console.log(cart.countTotalPrice())
-console.log(cart.clear());
-
-
+cart.clear();
+console.log(cart.getItems())
+console.log(cart.countTotalPrice())
 // ========================================================
 
 // const user = {

@@ -235,7 +235,7 @@ console.log("Total", cart.countTotalPrice())
 // showProfileInfo(profile);
 
 
-console.log("==========================")
+console.log("==========================");
 
 // const authors = {
 //     kiwi: 4,
@@ -250,3 +250,102 @@ console.log("==========================")
 //     console.log(name, item);
 // }
 
+// /**
+//  * Розраховуємо індекс маси тіла людини
+//     * @param {Object} obj
+//     * @returns {Number} BMI
+//     */
+// function calcBIM({ weight, height }) {
+
+//     const numericWeight = Number(weight.replace(',','.'));
+//     const numericHeight = Number(height.replace(',','.'));
+
+//     return Number((numericWeight / numericHeight ** 2).toFixed(1));
+// };
+
+// console.log(calcBIM({
+//     weight: '88,3', 
+//     height: "1.75"
+// }));
+
+// console.log(calcBIM({
+//     weight: '82,3', 
+//     height: "1.85"
+// }));
+
+// /**
+//  * 
+//  * @param {Object} param0 
+//  */
+// function printContactsInfo({ names, phones }) {
+//     const nameList = names.split(',');
+//     const phoneList = phones.split(',');
+//     for (let i = 0; i < nameList.length; i += 1) {
+//         console.log(`${nameList[i]}: ${phoneList[i]}`);
+//     }
+// }
+
+// printContactsInfo ({
+//     names: 'Jacob,William,Solomon,Artemius',
+//     phones:'89001234567,89001112233,890055566377,890055566300',
+// });
+
+// function getBotReport({companyName, repairBots, defenceBots}) {
+//     return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// }
+
+// console.log(getBotReport({
+//     companyName: 'Cyberdyne Systems',
+//     repairBots: 150, 
+//     defenceBots: 50}));
+
+// function createContact(partialContact) {
+//     return {
+//         id: generateID(),
+//         createdAt: new Date(),
+//         list: "default",
+//         ...partialContact,
+       
+//     }
+// };
+
+// function generateID() {
+//     return '_' + Math.random().toString(36).substr(2,9);
+// }
+
+// console.log(createContact({
+//     name: "Mango",
+//     email: "mango@mail.com",
+//     list: "friends",
+// }));
+
+// console.log(createContact({
+//     name: "Poly",
+//     email: "poly@mail.com",
+// }));
+
+
+// function transformUsername({firstName, lastName, ...props}) {
+//     return {
+//         fullName: `${firstName} ${lastName}`,
+//         ...props,
+//     }
+// }
+
+// console.log(
+//     transformUsername({
+//     id: 1,
+//     firstName: 'Jacob',
+//     lastName: 'Mercer',
+//     email: 'j.mercer@mail.com',
+//     friendCount: 40,
+// }));
+
+// console.log(
+//     transformUsername({
+//     id: 2,
+//     firstName: 'Adrian',
+//     lastName: 'Cross',
+//     email: 'a.cross@hotmail.com',
+//     friendCount: 20,
+// }));
