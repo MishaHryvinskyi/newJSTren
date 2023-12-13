@@ -235,3 +235,18 @@ console.log("Total", cart.countTotalPrice())
 // showProfileInfo(profile);
 
 
+console.log("==========================")
+
+// const authors = {
+//     kiwi: 4,
+//     poly: 7,
+//     ajax: 9,
+//     mango: 6,
+// };
+
+// const entries = Object.entries(authors);
+
+// for(const [ name, item ] of entries) {
+//     console.log(name, item);
+// }
+

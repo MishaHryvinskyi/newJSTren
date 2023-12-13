@@ -333,17 +333,29 @@
 
 const cart = {
     item: [],
-    getItems() {},
+    getItems() {
+        return this.item;
+    },
     add(product) {
         this.item.push(product);
     },
 
     remove(productName) {
-       for(const ite of this.item) {
-        if(ite.name === productName) {
-            this.item.splice(ite.name, 1);
+        const{ item } = this;
+
+        for(let i = 0; i < item.length; i += 1) {
+
+            const { name } = item[i];
+
+            if(productName === name) {
+                item.splice(i, 1);
+            }
         }
-       }
+    //    for(const ite of this.item) {
+    //     if(ite.name === productName) {
+    //         this.item.splice(ite.name, 1);
+    //     }
+    //    }
     },
 
     clear() {
@@ -372,11 +384,15 @@ cart.add({ name: "🍋", price: 60 });
 cart.add({ name: "🍇", price: 70 });
 cart.add({ name: "🍓", price: 110 });
 
-console.log(cart.item);
+console.table(cart.getItems())
 
-console.log(cart.remove("🍎"));
+console.table(cart.item);
 
-console.log(cart.item);
+cart.remove("🍎");
+cart.remove("🍋");
+
+
+console.table(cart.getItems())
 
 console.log(cart.countTotalPrice())
 console.log(cart.clear());
