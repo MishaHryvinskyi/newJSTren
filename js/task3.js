@@ -331,57 +331,56 @@
 
 // console.log(getOnlineFriends(friends));
 
-// const cart = {
-//     item: [],
-//     getItems() {},
-//     add(product) {
-//         this.item.push(product);
-//     },
+const cart = {
+    item: [],
+    getItems() {},
+    add(product) {
+        this.item.push(product);
+    },
 
-//     remove(productName) {
-        
-//        for(const item of this.item) {
-//         const removeItem = this.item.indexOf(item);
-//         const idx = Object.values(item);
+    remove(productName) {
+       for(const ite of this.item) {
+        if(ite.name === productName) {
+            this.item.splice(ite.name, 1);
+        }
+       }
+    },
 
-//         if(idx.includes(productName)) {
-            
-//             this.item.splice(removeItem, 1);  
-//         }
-//        }
-//     },
+    clear() {
+        this.item = [];
+    },
 
-//     clear() {
-//         this.item = [];
-//     },
+    countTotalPrice() {
+        let total = 0;
+        for(const item of this.item) {
+            total += item.price
+        }
+        return total;
+    }, 
 
-//     countTotalPrice() {
-//         let total = 0;
-//         for(const price of this.item) {
-//             console.log(price)
-//         }
-//     }, 
+    increaseQuantity(productName) {
+        for(const ite of this.item) {
+            if(ite === productName) {}
+        }
+    },
 
-//     increaseQuantity(productName) {},
+    decreaseQuantity(productName) {},
+};
 
-//     decreaseQuantity(productName) {},
-// };
+cart.add({ name: "🍎", price: 50 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍓", price: 110 });
 
-// cart.add({ name: "🍎", price: 50 });
-// cart.add({ name: "🍋", price: 60 });
-// cart.add({ name: "🍇", price: 70 });
-// cart.add({ name: "🍓", price: 110 });
+console.log(cart.item);
 
-// console.log(cart.item);
-// console.log(cart.remove("🍓"));
-// console.log(cart.remove("🍇"));
-// console.log(cart.remove("🍎"));
-// console.log(cart.item);
+console.log(cart.remove("🍎"));
 
-// cart.add({ name: "🍓", price: 110 });
-// console.log(cart.item);
+console.log(cart.item);
 
-// console.log(cart.countTotalPrice())
+console.log(cart.countTotalPrice())
+console.log(cart.clear());
+
 
 // ========================================================
 
