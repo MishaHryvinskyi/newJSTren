@@ -350,13 +350,16 @@ console.log("==========================");
 //     friendCount: 20,
 // }));
 
-const highTemperatures = {
-    yesterday: 28,
-    today: 26,
-    tomorrow: 33,
+const bookShelf = {
+    books: ["The last kingdom", "Haze", "The guardian of dreams"],
+    updateBook(oldName, newName) {
+      for(const book of this.books) {
+        if(oldName === book) {
+            this.books.splice(oldName, 0, newName);
+            console.log(this.books)
+        }
+      }
+    },
   };
-  const { yesterday, today, tomorrow } = highTemperatures;
-  
-  
-  const meanTemperature = (yesterday + today + tomorrow) / 3;
-  console.log(meanTemperature)
+
+  console.log(bookShelf.updateBook("Haze", "Псєчий"))
