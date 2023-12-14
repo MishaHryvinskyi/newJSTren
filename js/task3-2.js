@@ -355,10 +355,12 @@ const bookShelf = {
     updateBook(oldName, newName) {
       for(const book of this.books) {
         if(oldName === book) {
-            this.books.splice(oldName, 0, newName);
+            this.books.splice(oldName, 1, newName);
         }
       }
     },
   };
 
-//   console.log(bookShelf.updateBook("Haze", "Dune"))
+bookShelf.updateBook("Haze", "Dune");
+
+// console.log(bookShelf.books)
