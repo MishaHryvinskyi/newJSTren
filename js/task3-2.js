@@ -354,13 +354,13 @@ const bookShelf = {
     books: ["The last kingdom", "Haze", "The guardian of dreams"],
     updateBook(oldName, newName) {
       for(const book of this.books) {
-        if(oldName === book) {
-            this.books.splice(oldName, 1, newName);
+        if(oldName in book) {
+            this.books.splice(book, 1, newName);
         }
       }
     },
   };
-
+console.log(bookShelf.books)
 bookShelf.updateBook("Haze", "Dune");
-
+console.log(bookShelf.books)
 // console.log(bookShelf.books)
