@@ -300,21 +300,61 @@
   // 2.2. результат колбек функції запушити в новий масив
 //3. Повернути новий масив
 
-function each (array, callback)  {
-  const newArray = [];
-  // for (const element of array) {
-  //   // newArray.push(callback(element));
-  //   const newElement = callback(element);
-  //   newArray.push(newElement);
-  // }
-  array.forEach(element => newArray.push(callback(element)));
-   return newArray;
-};
+// function each (array, callback)  {
+//   const newArray = [];
+//   // for (const element of array) {
+//   //   // newArray.push(callback(element));
+//   //   const newElement = callback(element);
+//   //   newArray.push(newElement);
+//   // }
+//   array.forEach(element => newArray.push(callback(element)));
+//    return newArray;
+// };
 
-const pow = n => n ** 2;
+// const pow = n => n ** 2;
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-console.log(each(arr, n => n + 1))
-console.log(each(arr, pow))
+// console.log(each(arr, n => n + 1))
+// console.log(each(arr, pow))
+
+
+// function add (callbackNumbers) {
+//   return callbackNumbers(2, 4, 8);
+// }
+
+// function numbers(a, b, c) {
+//   return a + b + c;
+// }
+
+// console.log(add(numbers));
+
+// const makeSheff = function (name) {
+//   const makeDish = function(dish) {
+//     console.log(`${name} готує ${dish}`);
+//   }
+
+//   return makeDish;
+// }
+
+// const katia = makeSheff("Катя");
+
+// katia("котлетки");
+// katia("с")
+
+// const floatingPoint = 3.456789;
+// const someInt = Math.round(floatingPoint);
+// const withDecimals = Number(floatingPoint.toFixed(2));
+
+// function roader(place) {
+//   return function add (num) {
+//     return Number(num.toFixed(place));
+//   }
+// }
+
+// const first = roader(2);
+// const first2 = roader(4);
+// console.log(first(2.423423))
+// first(2.423423)
+// console.log(first(2.423423))
 
