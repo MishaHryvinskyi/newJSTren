@@ -358,3 +358,189 @@
 // first(2.423423)
 // console.log(first(2.423423))
 
+// const arr = [1, 2, 3, 4, 5, 6, 7]
+
+// function each(arr, callback) {
+//   let total = arr[0];
+//   for(let i = 1; i < arr.length; i += 1) {
+//     total = callback(total, arr[i]);
+//   }
+//   return total;
+// }
+
+// console.log(each(arr, add));
+// console.log(each(arr, sum));
+// console.log(each(arr, division));
+
+// function add (first, second) {
+//   return first + second;
+// }
+
+// function sum (first, second) {
+//   return first * second;
+// }
+
+// function division (first, second) {
+//   return first / second;
+// }
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// arr.forEach(function(item, idx) {
+//   arr[idx] = item - 1;
+// });
+
+// console.log(arr)
+
+// function logProduct (product){
+//   console.log(product.name)
+// };
+// function logTotalPrice ({ price, quantity }){
+//   console.log(` загальна сума Total price ${price * quantity}`)
+// };  
+
+// function createProduct(obj, callback) {
+//   const product = {
+//     id: Date.now(),
+//     ...obj,
+//   }
+//   return callback(product)
+// }
+
+// console.log(createProduct({ name: "apple", price: 30, quantity: 3 }, logProduct));
+// console.log(createProduct({ name: "lemon", price: 20, quantity: 5 }, logTotalPrice));
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const handlerOnSuccess = message => console.log(`✅ Success! ${message}`);
+// const handlerOnError = (message) => console.log(`❌ Error! ${message}`);
+
+// const account = {
+//   username : 'Jack',
+//   balance: 400,
+//   withdraw (amount, onSuccess, onError) {
+//     if(amount > TRANSACTION_LIMIT) {
+//       onError(`TRANSACTION LIMIT ${TRANSACTION_LIMIT}`);
+//       return;
+//     } else if(this.balance < amount) {
+//       onError('Not enough in the account');
+//       return;
+//     } 
+//       this.balance -= amount;
+//       onSuccess(`Successfully ${amount}, balance ${this.balance}`)
+//     },
+//     deposit(amount, onSuccess, onError) {
+//       if(amount > TRANSACTION_LIMIT) {
+//         onError(`TRANSACTION LIMIT: ${TRANSACTION_LIMIT}`);
+//         return;
+//       } else if (amount <= 0) {
+//         onError(`Nice try bro! 😂`);
+//         return;
+//       }
+
+//       this.balance += amount;
+//       onSuccess(`Added ${amount}, balance ${this.balance}`)
+//     }
+//   };
+
+// account.withdraw(2000, handlerOnSuccess, handlerOnError);
+// account.withdraw(600, handlerOnSuccess, handlerOnError);
+// account.withdraw(300, handlerOnSuccess, handlerOnError);
+// account.deposit(1700, handlerOnSuccess, handlerOnError);
+// account.deposit(1000, handlerOnSuccess, handlerOnError);
+// account.deposit(-600, handlerOnSuccess, handlerOnError);
+// account.deposit(0, handlerOnSuccess, handlerOnError);
+
+// function each (arr, callback) {
+//   let c = 0;
+//   for(let i = 0; i < arr.length; i += 1) {
+//     console.log(arr[i]);
+//     c = arr[i]
+//   }
+//   return callback(c)
+// }
+
+// console.log(each([64, 49, 36, 25, 16], function(value) {
+//   return value * 2;
+// }))
+
+// const logProduct = product => console.log(product);
+// const logTotalPrice = ({ price, quantity }) => console.log(price * quantity);
+// const createProduct = (partialProduct, callback) => callback({
+//     id: Date.now(),
+//     ...partialProduct,
+//   });
+
+// createProduct({
+//   name:"🍅",
+//   price: 30,
+//   quantity: 3,
+// }, logProduct);
+
+// createProduct({
+//   name:"🍅",
+//   price: 30,
+//   quantity: 4,
+// }, logTotalPrice);
+
+// const logItems = items => items.forEach((value, index) => console.log(`${index + 1} - ${value}`));
+
+// logItems(["Mango", "Poly", "Ajax"]);
+// logItems(["🍎","🍇","🍑","🍌","🍋"]);
+
+// const calculateAverage = (...args) => {
+//   let total = 0;
+//   args.forEach(value => total += value)
+  
+//   return total / args.length;
+// }
+
+// console.log(calculateAverage(1, 2, 3, 4));
+// console.log(calculateAverage(14, 8, 2));
+// console.log(calculateAverage(27, 43, 2, 8, 36));
+
+// const pizzaPalace = {
+//   pizzas: ["Ultracheese", "Smoked", "Four meats"],
+
+//   order(pizzaName, onSuccess, onError) {
+//     if(this.pizzas.includes(pizzaName)) {
+//       return onSuccess(pizzaName);
+//     } else {
+//       return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+//     }
+//   },
+// };
+
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// console.log(pizzaPalace.order("Smoked", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Four meats", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism"],
+  },
+];
+
+const genres = books.flatMap(book => book.genres);
+console.log(genres)
