@@ -524,6 +524,37 @@
 // console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
 // console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+
+// const genres = books.flatMap(book => book.genres);
+// console.log(genres)
+
+// const input = prompt('введіть своє імя');
+
+// if (input === "katia") {
+//   alert("Привіт файна булочка");
+// } else if(input === "vika") {
+//   alert("Виключайте телевізор і йдіть спати!) добраніч")
+//  } else {
+//   alert("Ти шо таке?")
+// }
+
 const books = [
   {
     title: "The Last Kingdom",
@@ -533,14 +564,15 @@ const books = [
   {
     title: "Beside Still Waters",
     author: "Robert Sheckley",
-    genres: ["fiction"],
+    genres: ["fiction", "mysticism"],
   },
   {
     title: "Redder Than Blood",
     author: "Tanith Lee",
-    genres: ["horror", "mysticism"],
+    genres: ["horror", "mysticism", "adventure"],
   },
 ];
-
-const genres = books.flatMap(book => book.genres);
-console.log(genres)
+// Change code below this line
+const allGenres = books.flatMap(book => book.genres);
+const uniqueGenres = allGenres.filter((book, index, array) => array.indexOf(book) === index);
+console.log(uniqueGenres)
