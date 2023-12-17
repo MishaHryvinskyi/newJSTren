@@ -555,24 +555,49 @@
 //   alert("Ти шо таке?")
 // }
 
-const books = [
-  {
-    title: "The Last Kingdom",
-    author: "Bernard Cornwell",
-    genres: ["adventure", "history"],
-  },
-  {
-    title: "Beside Still Waters",
-    author: "Robert Sheckley",
-    genres: ["fiction", "mysticism"],
-  },
-  {
-    title: "Redder Than Blood",
-    author: "Tanith Lee",
-    genres: ["horror", "mysticism", "adventure"],
-  },
-];
-// Change code below this line
-const allGenres = books.flatMap(book => book.genres);
-const uniqueGenres = allGenres.filter((book, index, array) => array.indexOf(book) === index);
-console.log(uniqueGenres)
+// const numbers = [5, 10, 15, 20, 25];
+
+// const doubleNumber = numbers.map(function num(num){
+//   return num  - 3 
+// });
+// console.log(doubleNumber)
+
+// const players = [
+//   { name: "Катя", id: "player-1", timePlayed: 450, points: 57, online: true },
+//   { name: "Міша", id: "player-2", timePlayed: 234, points: 43, online: false },
+//   { name: "Вохра", id: "player-3", timePlayed: 123, points: 23, online: true },
+// ];
+
+// console.table(players)
+
+// const updatePlayerPoint = "player-1";
+
+// const updatePlayer = players.map(player => 
+//   updatePlayerPoint === player.id 
+//   ? { 
+//     ...player, 
+//     timePlayed: player.timePlayed + 200,  
+//   } 
+//   : player,
+// )
+
+// console.table(updatePlayer);
+
+// const isOnline = players.filter(({ timePlayed }) => timePlayed >= 300);
+// console.log(isOnline)
+
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const reduceNum = numbers.reduce((acc, number) => acc + number, 0);
+// console.log(reduceNum)
+
+// const salary = {
+//   mango: 100,
+//   poly: 50,
+//   ajax: 150,
+// };
+
+// const totalSalary = Object.values(salary).reduce((acc, number) => acc + number, 0);
+// console.log(totalSalary)
+
