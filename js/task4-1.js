@@ -294,6 +294,96 @@
 // letters.sort();
 // console.log("letters", letters);
 
+// // map()
+// const arr = [1, 2, 3, 4, 5, 6, 7];
 
+// const result = arr.map(num =>  !(num % 2) ? num * 2 : num);
+// console.log(result);
 
+// // map під капотом
+// function customMap(arr, callback) {
+//     const result = [];
+//     for(let i = 0; i < arr.length; i += 1){
+//         const item = arr[i];
+//        result.push(callback(item, i, arr))
+//     }
+//     return result;
+// }
+
+// console.log(customMap(arr, foo));
+
+// function foo(num, idx, arr) {
+//     if(!(num % 2)) { 
+//         return num * 2;
+//     }
+//     return num;
+// }
+
+// const arr = [
+// {
+//     name: "us1",
+//     skills: ["html", "js"]
+// },
+// {
+//     name: "us2",
+//     skills: ["node.js", "express"]
+// },
+// {
+//     name: "us3",
+//     skills: ["css", "react"]
+// },
+// ];
+
+// const num = [2, 4, 6, 3, 22, 11];
+// const result = [...num].sort((a, b) => b - a);
+// console.log(result)
+// console.log(num)
+
+// reduce()
+
+// const str = [11, 4, 9, 3, 54, 23, 12];
+
+// // const result = str.reduce((acc, item, idx, arr) => {
+// //     console.log("acc", acc);
+// //     console.log('item', item)
+// //     return acc + item;
+// // }, 0)
+
+// const rat = str.reduce((acc, item) => {
+//     console.log(acc);
+//     console.log(item)
+//     acc.push(item * 2);
+//     return acc;
+// }, []);
+// console.log(rat)
+
+const cars =[
+    { make: "Honda", model: "CR-V", type: "suv", amount: 14, price: 24045, onSale: true },
+    { make: "Honda", model: "Accord", type: "sedan", amount: 2, price: 22455, onSale: true },
+    { make: "Mazda", model: "Mazda 6", type: "sedan", amount: 8, price: 24195, onSale: false },
+    { make: "Mazda", model: "CX-9", type: "suv", amount: 7, price: 31520, onSale: true },
+    { make: "Toyota", model: "4Runner", type: "suv", amount: 19, price: 34210, onSale: false },
+    { make: "Toyota", model: "Sequoia", type: "suv", amount: 16, price: 45560, onSale: false },
+    { make: "Toyota", model: "Tacoma", type: "truck", amount: 4, price: 24320, onSale: true },
+    { make: "Ford", model: "F-150", type: "truck", amount: 11, price: 27110, onSale: true },
+    { make: "Ford", model: "Fusion", type: "sedan", amount: 13, price: 22120, onSale: true },
+    { make: "Ford", model: "Explorer", type: "suv", amount: 6, price: 31660, onSale: false }
+];
+
+// // Esample 1 - Метод map()
+// // getModel() повинна повертати масив моделей
+// const getModels = cars => cars.map(({ model }) => model);
+// console.log(getModels(cars));
+
+// // Example 2 метод map()
+// // makeCarsWithDiscount() 
+// const makeCarsWithDiscount = (cars, discount) => {
+//     return cars.map(car => ({
+//         ...car,
+//         price: car.price * (1 - discount)
+//     }));
+// }
+
+// console.log(makeCarsWithDiscount(cars, 0.2));
+// console.log(makeCarsWithDiscount(cars, 0.4));
 
