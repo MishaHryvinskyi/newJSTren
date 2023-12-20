@@ -357,18 +357,18 @@
 // }, []);
 // console.log(rat)
 
-const cars = [
-    { make: "Honda", model: "CR-V", type: "suv", amount: 14, price: 24045, onSale: true },
-    { make: "Honda", model: "Accord", type: "sedan", amount: 2, price: 22455, onSale: true },
-    { make: "Mazda", model: "Mazda 6", type: "sedan", amount: 8, price: 24195, onSale: false },
-    { make: "Mazda", model: "CX-9", type: "suv", amount: 7, price: 31520, onSale: true },
-    { make: "Toyota", model: "4Runner", type: "suv", amount: 19, price: 34210, onSale: false },
-    { make: "Toyota", model: "Sequoia", type: "suv", amount: 16, price: 45560, onSale: false },
-    { make: "Toyota", model: "Tacoma", type: "truck", amount: 4, price: 24320, onSale: true },
-    { make: "Ford", model: "F-150", type: "truck", amount: 11, price: 27110, onSale: true },
-    { make: "Ford", model: "Fusion", type: "sedan", amount: 13, price: 22120, onSale: true },
-    { make: "Ford", model: "Explorer", type: "suv", amount: 6, price: 31660, onSale: false }
-];
+// const cars = [
+//     { make: "Honda", model: "CR-V", type: "suv", amount: 14, price: 24045, onSale: true },
+//     { make: "Honda", model: "Accord", type: "sedan", amount: 2, price: 22455, onSale: true },
+//     { make: "Mazda", model: "Mazda 6", type: "sedan", amount: 8, price: 24195, onSale: false },
+//     { make: "Mazda", model: "CX-9", type: "suv", amount: 7, price: 31520, onSale: true },
+//     { make: "Toyota", model: "4Runner", type: "suv", amount: 19, price: 34210, onSale: false },
+//     { make: "Toyota", model: "Sequoia", type: "suv", amount: 16, price: 45560, onSale: false },
+//     { make: "Toyota", model: "Tacoma", type: "truck", amount: 4, price: 24320, onSale: true },
+//     { make: "Ford", model: "F-150", type: "truck", amount: 11, price: 27110, onSale: true },
+//     { make: "Ford", model: "Fusion", type: "sedan", amount: 13, price: 22120, onSale: true },
+//     { make: "Ford", model: "Explorer", type: "suv", amount: 6, price: 31660, onSale: false }
+// ];
 
 // // Esample 1 - Метод map()
 // // getModel() повинна повертати масив моделей
@@ -489,7 +489,81 @@ const cars = [
 //  console.log(getAuto(['Honda', 'Mazda', 'Nissan', 'BMW', 'ЖУЖА']));
 //  console.log(getAuto([]))
 
-const allCourse = ['html', 'js', 'css', 'js', 'css'];
-const uniqueCourses = allCourse.filter((course, idx, arr) => arr.indexOf(course) === idx);
-console.log(uniqueCourses)
-console.log(allCourse)
+// const allCourse = ['html', 'js', 'css', 'js', 'css'];
+// const uniqueCourses = allCourse.filter((course, idx, arr) => arr.indexOf(course) === idx);
+// console.log(uniqueCourses)
+// console.log(allCourse)
+
+
+const users = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+      isActive: true,
+      balance: 3951,
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+      isActive: false,
+      balance: 1498,
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female"
+    }
+  ]
+
+  const getTotalBalanceByGender = (users, gender) => users
+  .filter(user => user.gender === gender)
+  .reduce((acc, user) => acc + user.balance,0);
+
+  console.log(getTotalBalanceByGender(users, "female"));
+  console.log(getTotalBalanceByGender(users, "male"))
