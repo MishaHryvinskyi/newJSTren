@@ -30,29 +30,47 @@
 // showThis.apply(objA);
 
 
+// const counter = {
+//     value: 0,
+//     increment() {
+//         this.value += 1;
+//     },
+//     decrement() {
+//         this.value -= 1;
+//     },
+// };
+
+// const refs = {
+//     incrementBtn: document.querySelector('.js-increment'),
+//     decrementBtn: document.querySelector('.js-decrement'),
+//     valueEL: document.querySelector('.js-value'),
+// };
+
+// refs.decrementBtn.addEventListener('click', function () {
+//     counter.increment();
+//     refs.valueEL.textContent = counter.value;
+// });
+
+// refs.incrementBtn.addEventListener('click', function () {
+//     counter.decrement();
+//     refs.valueEL.textContent = counter.value;
+// });
+
 const counter = {
     value: 0,
-    increment() {
-        this.value += 1;
+    increment(value) {
+        console.log("increment -> this", this);
+        this.value += value;
     },
-    decrement() {
-        this.value -= 1;
-    },
+    decrement(value) {
+        console.log("increment -> this", this);
+        this.value -= value;
+    }
 };
 
-const refs = {
-    incrementBtn: document.querySelector('.js-increment'),
-    decrementBtn: document.querySelector('.js-decrement'),
-    valueEL: document.querySelector('.js-value'),
+const updateCounter = function(value, operation) {
+    operation(value);
 };
 
-refs.decrementBtn.addEventListener('click', function () {
-    counter.increment();
-    refs.valueEL.textContent = counter.value;
-});
-
-refs.incrementBtn.addEventListener('click', function () {
-    counter.decrement();
-    refs.valueEL.textContent = counter.value;
-});
-
+updateCounter(10, counter.increment.bind(counter));
+updateCounter(5, counter.decrement.bind(counter));
