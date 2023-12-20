@@ -357,7 +357,7 @@
 // }, []);
 // console.log(rat)
 
-const cars =[
+const cars = [
     { make: "Honda", model: "CR-V", type: "suv", amount: 14, price: 24045, onSale: true },
     { make: "Honda", model: "Accord", type: "sedan", amount: 2, price: 22455, onSale: true },
     { make: "Mazda", model: "Mazda 6", type: "sedan", amount: 8, price: 24195, onSale: false },
@@ -384,6 +384,112 @@ const cars =[
 //     }));
 // }
 
-// console.log(makeCarsWithDiscount(cars, 0.2));
-// console.log(makeCarsWithDiscount(cars, 0.4));
+// console.table(cars);
+// console.table(makeCarsWithDiscount(cars, 0.2));
+// console.table(makeCarsWithDiscount(cars, 0.4));
 
+// Example 3 Метод filter()
+// filterByPrice повертає масив авто ціна яких менша ніж значення параметра threshold
+// const filterByPrice = (cars, threshold) => cars.filter(({ price }) => price < threshold);
+
+// console.table(filterByPrice(cars, 30000));
+// console.table(filterByPrice(cars, 25000));
+
+// Example 4 метод filter()
+// getCarsWithDiscount повертає масив авто властивість onSale яких true
+// const getCarsWithDiscount = cars => cars.filter(({ onSale }) => onSale);
+
+// console.table(getCarsWithDiscount(cars));
+
+// Example 5 метод filter()
+// getCarWithType() повертає масив автомобілів з певним типом
+// const getCarWithType = (cars, type) => cars.filter(({ type: typeCar }) => typeCar === type);
+
+// console.table("suv", getCarWithType(cars, "suv"));
+// console.table("sedan", getCarWithType(cars, "sedan"));
+// console.table("truck", getCarWithType(cars, "truck"));
+
+// Example 6 метод find
+// const getCarByModel = (cars, model) => cars.find(({ model: carModel }) => carModel === model);
+
+// console.log(getCarByModel(cars, "Explorer"));
+// console.log(getCarByModel(cars, "Tacoma"));
+// console.log(getCarByModel(cars, "F-150"));
+
+// Example 7 метод sort()
+// sortByAscendingAmount повертає новий масив авто відсортований за зростанням значення властивості amount
+// const sortByAscendingAmount = cars => [...cars].sort((a, b) => a.amount - b.amount);
+// const sortByAscendingAmount = cars => [...cars].sort(({ amount: a }, { amount: b }) => a - b);
+
+// console.table(sortByAscendingAmount(cars));
+
+// Example 8 метод sort()
+// sortByDescendingPrice() повертає новий масив авто відсортований за за зменшенням значення price
+// const sortByDescendingPrice = cars => [...cars].sort(({ price: a }, { price: b }) => b - a);
+    
+// console.table(sortByDescendingPrice(cars));
+// console.table(cars);
+
+// Example 9 метод sort()
+// sortByModel поверне новий масив за назвою авто по алфавіту
+// const sortByModel = (cars, order) => [...cars].sort(({model: a}, {model: b}) => order === "asc" 
+//     ?  a.localeCompare((b))
+//     :  b.localeCompare((a)));
+ 
+
+// Example 10 reduce()
+// getTotalAmount() повертає загальну кількість авто значення властивості amount
+
+// const getTotalAmount = cars => cars.reduce((acc, { amount }) => acc + amount, 0);
+// const getTotalAmount = function (cars) {
+//     return cars.reduce((acc, { amount }) => acc + amount, 0);
+// }
+// console.log(getTotalAmount(cars));
+
+// Example 11 ланюжок методів
+// getAvailableCarNames повертає масив моделей авто але тільки тих які зараз на розпродажі
+
+// const getAvailableCarNames = cars => cars
+//     .filter(({ onSale }) => onSale)
+//     .map(({ model }) => model);
+// console.log(getAvailableCarNames(cars));
+
+// const getAvailableCarNames = cars => cars
+//     .filter(({ onSale }) => onSale)
+//     .map(({ model, make }) => `${model} - ${make}`);
+// console.log(getAvailableCarNames(cars));
+
+// Example 12 ланцюжок методів
+// getSortedCarsOnSale() повертає масив авто на розпродажі відсортованих за зростанням цін
+
+// const getSortedCarsOnSale = cars => cars
+// .filter(({ onSale }) => onSale)
+// .sort(({price: a},{price: b}) => a - b)
+
+// console.table(getSortedCarsOnSale(cars))
+
+// const str ="weageshfkjfoesohgolehierjhperjrghoihbiv";
+// const result = str.split('').reduce((acc, item) => {
+//     acc.hasOwnProperty((item)) 
+//     ? acc[item] += 1 
+//     : acc[item] = 1;
+//     return acc;
+// },{})
+// console.log(result);
+
+//  const arr = ['Honda', 'Mazda', 'Nissan', 'BMW', 'ЖУЖА'];
+
+//  const getAuto = (arr) => {
+//     const result = arr.reduce((acc, car, indx) => {
+//         return acc + `${indx + 1} - ${car}\n`
+//     }, arr.length ? `Загальна кількість авто ${arr.length}: \n` : "Втбачте ніц нема!😥");
+//     return result
+//  };
+
+//  console.log(getAuto(['Honda', 'Mazda', 'Nissan', 'BMW', 'ЖУЖА']));
+//  console.log(getAuto([]))
+
+const allCourse = ['html', 'js', 'css', 'js', 'css'];
+const uniqueCourses = allCourse.filter((course, idx, arr) => arr.indexOf(course) === idx);
+console.log(uniqueCourses)
+console.log(allCourse)
