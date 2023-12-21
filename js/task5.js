@@ -56,21 +56,40 @@
 //     refs.valueEL.textContent = counter.value;
 // });
 
-const counter = {
-    value: 0,
-    increment(value) {
-        console.log("increment -> this", this);
-        this.value += value;
-    },
-    decrement(value) {
-        console.log("increment -> this", this);
-        this.value -= value;
+// const counter = {
+//     value: 0,
+//     increment(value) {
+//         console.log("increment -> this", this);
+//         this.value += value;
+//     },
+//     decrement(value) {
+//         console.log("increment -> this", this);
+//         this.value -= value;
+//     }
+// };
+
+// const updateCounter = function(value, operation) {
+//     operation(value);
+// };
+
+// updateCounter(10, counter.increment.bind(counter));
+// updateCounter(5, counter.decrement.bind(counter));
+
+const objA = {
+    name: "A",
+    age: 22,
+    myAge(a, b) {
+        console.log(this, a, b)
     }
-};
+}
 
-const updateCounter = function(value, operation) {
-    operation(value);
-};
+objA.myAge(22, 44);
 
-updateCounter(10, counter.increment.bind(counter));
-updateCounter(5, counter.decrement.bind(counter));
+const objB = {
+    name: "B",
+    age:23
+}
+
+objA.myAge.call(objB, 1, 2)
+objA.myAge.apply(objB, [5, 5])
+objA.myAge.bind(objB, 1, 2)
