@@ -346,30 +346,63 @@
 // });
 // console.log(poly.getInfo());
 
-class Storage {
-    constructor(items = []) {
-        this.items = items;
-    }
-    getItems() {
-        return this.items;
-    }
-    addItem(item) {
-        if(!this.items.includes(item)) {
-            this.items.push(item);
-            return;
-        }
-        console.log(`Такий товар ${item} вже є`)
-    }
-    removeItem(item) {
-        const idx = this.items.indexOf(item)
-        if(this.items.includes(item)) {// !!~idx
-            this.items.splice(idx, 1);
-        }
-    }
-}
+// class Storage {
+//     constructor(items = []) {
+//         this.items = items;
+//     }
+//     getItems() {
+//         return this.items;
+//     }
+//     addItem(item) {
+//         if(!this.items.includes(item)) {
+//             this.items.push(item);
+//             return;
+//         }
+//         console.log(`Такий товар ${item} вже є`)
+//     }
+//     removeItem(item) {
+//         const idx = this.items.indexOf(item)
+//         if(this.items.includes(item)) {// !!~idx
+//             this.items.splice(idx, 1);
+//         }
+//     }
+// }
 
-const storage = new Storage(["🍎", "🍋", "🍇", "🍑"]);
-const items = storage.getItems();
-console.table(items)
-storage.addItem("🍌");
-console.table(storage.items)
+// const storage = new Storage(["🍎", "🍋", "🍇", "🍑"]);
+// const items = storage.getItems();
+// console.table(items)
+// storage.addItem("🍌");
+// console.table(storage.items)
+
+// class StringBuilder {
+//     constructor(value = "") {
+//       this.value = value;
+//     }
+  
+//     getValue() {
+//       return this.value;
+//     }
+  
+//     padStart(str) {
+//         this.value =  `${str}${this.value}`
+//     }
+
+//     padEnd(str) {
+//         this.value = this.value.concat(str)
+//     }
+  
+//     padBoth(str) {
+//         this.value = str + this.value + str 
+//     }
+//   }
+  
+  
+//   // Change code above this line
+//   const builder = new StringBuilder(".");
+//   console.log(builder.getValue()); // "."
+//   builder.padStart("^");
+//   console.log(builder.getValue()); // "^."
+//   builder.padEnd("^");
+//   console.log(builder.getValue()); // "^.^"
+//   builder.padBoth("=");
+//   console.log(builder.getValue()); // "=^.^="
