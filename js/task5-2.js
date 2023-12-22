@@ -172,64 +172,204 @@
 // })
 // console.log(zchaba)
 
-const CounterPlugin = function ({ 
-    rootSelector, 
-    initialValue = 0, 
-    step = 1 
-} = {}) {
+// const CounterPlugin = function ({ 
+//     rootSelector, 
+//     initialValue = 0, 
+//     step = 1 
+// } = {}) {
    
-    this._value = initialValue;
-    this._step = step;
+//     this._value = initialValue;
+//     this._step = step;
 
-    this._refs = this._getRefs(rootSelector);
-    this._bindEvents();
-};
+//     this._refs = this._getRefs(rootSelector);
+//     this._bindEvents();
+// };
 
-CounterPlugin.prototype._getRefs = function (rootSelector) {
-    console.log(rootSelector);
+// CounterPlugin.prototype._getRefs = function (rootSelector) {
+//     console.log(rootSelector);
 
-    const refs = {};
-    refs.container = document.querySelector(rootSelector);
-    refs.incrementBtn = refs.container.querySelector('[data-increment]');
-    refs.decrementBtn = refs.container.querySelector('[data-decrement]');
-    refs.value = refs.container.querySelector('[data-value]');
-    console.log(refs.incrementBtn);
-    console.log(refs.value);
-    console.log(refs.decrementBtn);
-    return refs;
-};
+//     const refs = {};
+//     refs.container = document.querySelector(rootSelector);
+//     refs.incrementBtn = refs.container.querySelector('[data-increment]');
+//     refs.decrementBtn = refs.container.querySelector('[data-decrement]');
+//     refs.value = refs.container.querySelector('[data-value]');
+//     console.log(refs.incrementBtn);
+//     console.log(refs.value);
+//     console.log(refs.decrementBtn);
+//     return refs;
+// };
 
-CounterPlugin.prototype._bindEvents = function () {
-   this._refs.incrementBtn.addEventListener('click', () => {
-    console.log(this)
-    this.increment();
-   })
+// CounterPlugin.prototype._bindEvents = function () {
+//    this._refs.incrementBtn.addEventListener('click', () => {
+//     console.log(this)
+//     this.increment();
+//    })
 
-   this._refs.decrementBtn.addEventListener('click', () => {
-    console.log(this)
-    this.decrement();
-   })
+//    this._refs.decrementBtn.addEventListener('click', () => {
+//     console.log(this)
+//     this.decrement();
+//    })
+// }
+
+// CounterPlugin.prototype.updateValueUi = function () {
+//     this._refs.value.textContent = this._value;
+// }
+
+// CounterPlugin.prototype.increment = function () {
+//     this._value += this._step;
+//     this.updateValueUi();
+// };
+
+// CounterPlugin.prototype.decrement = function () {
+//     this._value -= this._step;
+//     this.updateValueUi();
+// };
+
+// const counter1 = new CounterPlugin({ rootSelector:'#counter-1', step: 20 });
+
+// console.log(counter1);
+// counter1.increment();
+// counter1.increment();
+// console.log(counter1);
+
+//  class User {
+//     static counter = 0;
+//     static addUser() {
+//         this.counter +=1;
+//         console.log(`Number of users ${this.counter}`)
+//     }
+//     #location
+//     constructor({ name, email, age = 18, location = "world", password } = {}) {
+//         this.name = name;
+//         this.email = email;
+//         this.age = age;
+//         this.#location = location;
+//         this.password = password;
+//         User.addUser()
+//     }
+//     sayHello() {
+//         console.log(this.name)
+//     }
+
+//     get locale() {
+//         return this.#location;
+//     }
+//     set locale(city) {
+//         const value = prompt("Enter password");
+//         if(value === this.password) {
+//             this.#location = city;
+//             console.log(this.#location)
+//         } else {
+//             console.log("ХАЦКЕР?")
+//         }
+//     }
+//  }
+
+// class Avatar extends User {
+//     constructor({ name, email, age, password, damage }) {
+//         super({ name, email, age, password })
+//         this.damage = damage;
+//     }
+
+//     attack() {
+//         console.log(`Attacl with damage ${this.damage}`)
+//     }
+// }
+
+// class Zombie extends User {
+//     constructor({ name, email, age, password, poison }) {
+//         super({ name, email, age, password })
+//         this.poison = poison;
+//     }
+
+//     toBite() {
+//         console.log(`Bite with ${this.poison}`)
+//     }
+// }
+
+
+//  const test = new Avatar({
+//     name: 'User a', 
+//     email: "testA@gmail.com",
+//     age: 20,
+//     password: "qwerty111",
+//     damage: 700,
+// });
+
+// // test.sayHello()
+// // test.locale = "Dnipro"
+
+// const test2 = new Zombie({
+//     name: 'User b', 
+//     email: "testB@gmail.com",
+//     location: " Lviv",
+//     poison: 500,
+// });
+
+// // test2.sayHello()
+// console.log(test);
+// console.log(test2);
+// // console.log(test.constructor.counter);
+
+// class Blogger {
+//     constructor({ name, age, numberOfPosts, topics } = {}) {
+//         this.name = name;
+//         this.age = age;
+//         this.numberOfPosts = numberOfPosts;
+//         this.topics = topics;
+//     }
+//     getInfo() {
+//         return `User ${this.name} is ${this.age} years old and has ${this.numberOfPosts} posts`;
+//     }
+
+//     updatePostCounter(value) {
+//         return this.numberOfPosts += value;
+//     }
+// }
+
+// const mango = new Blogger({
+//     name: 'Mango',
+//     age: 24,
+//     numberOfPosts: 20,
+//     topics: ['tech', 'cooking']
+// })
+
+// mango.updatePostCounter(2)
+
+// console.log(mango.getInfo())
+
+// const poly = new Blogger({
+//     name: 'Poly',
+//     age: 19,
+//     numberOfPosts: 17,
+//     topics: ['sports', 'gaming', 'health']
+// });
+// console.log(poly.getInfo());
+
+class Storage {
+    constructor(items = []) {
+        this.items = items;
+    }
+    getItems() {
+        return this.items;
+    }
+    addItem(item) {
+        if(!this.items.includes(item)) {
+            this.items.push(item);
+            return;
+        }
+        console.log(`Такий товар ${item} вже є`)
+    }
+    removeItem(item) {
+        const idx = this.items.indexOf(item)
+        if(this.items.includes(item)) {// !!~idx
+            this.items.splice(idx, 1);
+        }
+    }
 }
 
-CounterPlugin.prototype.updateValueUi = function () {
-    this._refs.value.textContent = this._value;
-}
-
-CounterPlugin.prototype.increment = function () {
-    this._value += this._step;
-    this.updateValueUi();
-};
-
-CounterPlugin.prototype.decrement = function () {
-    this._value -= this._step;
-    this.updateValueUi();
-};
-
-const counter1 = new CounterPlugin({ rootSelector:'#counter-1', step: 20 });
-
-console.log(counter1);
-counter1.increment();
-counter1.increment();
-console.log(counter1);
-
-
+const storage = new Storage(["🍎", "🍋", "🍇", "🍑"]);
+const items = storage.getItems();
+console.table(items)
+storage.addItem("🍌");
+console.table(storage.items)
