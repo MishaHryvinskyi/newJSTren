@@ -261,25 +261,187 @@
 //     container.style.marginTop = `${step}px`;
 // }
 
-const title = document.querySelector(".text-js");
+// const title = document.querySelector(".text-js");
+
+// title.addEventListener("click", onClick);
+// const maxLengs = 13;
+// const totalLength = maxLengs + 3;
+
+// function onClick (event) {
+//     const title = event.currentTarget;
+//     const str = title.textContent.slice(0, maxLengs);
+//     if(title.textContent.length > totalLength) {
+//         const remaider = title.textContent.slice(maxLengs);
+//         title.setAttribute('data-title', remaider)
+//         title.textContent = str + '...';
+//     } else {
+//         const remaider = title.dataset.title;
+//         title.textContent = str + remaider
+//     }
+// }
+
+// const formEl = document.querySelector(".js-form");
+
+// formEl.addEventListener("submit", onInput)
+
+// function onInput (event) {
+//     event.preventDefault();
+//     const { userName, userAge, userEmail } = event.currentTarget.elements;
+//    const data = {
+//     name: userName.value,
+//     email: userEmail.value,
+//     age: userAge.value
+//    }
+//     console.log(data)
+// }
+
+// document.addEventListener("keydown", onKey);
+
+// function onKey (e) {
+//     console.log(e.key)
+// }
+
+// const cars = [
+//     {
+//         id: 1,
+//         car: "Honda",
+//         type: "Civic",
+//         price: 12000,
+//         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU"
+//     },
+//     {
+//         id: 2,
+//         car: "Audi",
+//         type: "Q7",
+//         price: 40000,
+//         img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg"
+//     },
+//     {
+//         id: 3,
+//         car: "Honda",
+//         type: "Accord",
+//         price: 20000,
+//         img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg"
+//     },
+//     {
+//         id: 4,
+//         car: "Volco",
+//         type: "XC60",
+//         price: 7000,
+//         img: "https://www.volvocars.com/media/shared-asssets/master/images/pages/my19/"
+//     },
+//     {
+//         id: 33,
+//         car: "BMW",
+//         type: "5 siries",
+//         price: 9000,
+//         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU"
+//     },
+
+// ];
+
+// const list = document.querySelector(".js-list");
+// const form = document.querySelector(".search-form-js");
+
+// form.addEventListener("submit", onSearch);
+
+// function createMarkup (arr) {
+//     return arr
+//     .map(
+//         ({ id, car, type, price, img }) => `
+//     <li class="list-item" id="${id}">
+//         <h2 class="list-title">${car}</h2>
+//         <h3 class="list-title-type">${type}</h3>
+//         <img width="300" src="${img}" alt="${car}"/>
+//         <p>${price}</p>
+//     </li>`
+//     )
+//     .join("");
+// }
 
 
-title.addEventListener("click", onClick);
-const maxLengs = 13;
-const totalLength = maxLengs + 3;
+// list.insertAdjacentHTML("beforeend", createMarkup(cars));
 
-function onClick (event) {
-    const title = event.currentTarget;
-    const str = title.textContent.slice(0, maxLengs);
-    if(title.textContent.length > totalLength) {
-        const remaider = title.textContent.slice(maxLengs);
-        title.setAttribute('data-title', remaider)
-        title.textContent = str + '...';
-    } else {
-        const remaider = title.dataset.title;
-        title.textContent = str + remaider
-    }
-}
+// function onSearch (e) {
+//     e.preventDefault();
+//     const form = e.currentTarget;
+//     const { query, select } = form.elements;
+   
+//     const searchCars = cars.filter(item => 
+//          item[select.value].toLowerCase() === query.value.trim().toLowerCase());
+   
+//          list.innerHTML = createMarkup(searchCars);
+// } 
 
+// const list = document.getElementById("ingredients");
 
+// const ingredients = [
+//     "Potatoes",
+//     "Mushrooms",
+//     "Garlic",
+//     "Tomatos",
+//     "Herbs",
+//     "Condiments",
+//   ];
+
+//   const item = document.createElement("li");
+  
+//   const items = ingredients.map(item => {
+//     const li = document.createElement('li');
+//     li.textContent = item;
+//     li.classList.add("item");
+//     return li;
+//   })
+  
+
+//   list.append(...items)
+
+// const images = [
+//     {
+//       url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+//       alt: "White and Black Long Fur Cat",
+//     },
+//     {
+//       url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+//       alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+//     },
+//     {
+//       url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//       alt: "Group of Horses Running",
+//     },
+//   ];
+
+//   const galleryList = document.querySelector(".gallery");
+//   console.log(galleryList);
+
+//   const markup = images.map(({ url, alt }) => `
+//     <li><img src="${url}" alt="${alt}" width="300" height="200" /></li>
+//   `);
+
+//   galleryList.insertAdjacentHTML("beforeend", markup)
+
+{/* <div id="counter">
+    <button type="button" data-action="decrement">-1</button>
+    <span id="value">0</span>
+    <button type="button" data-action="increment">+1</button>
+  </div> */}
+
+//   const refs = {
+//     counter: document.getElementById("counter"),
+//     btnDecrement: document.querySelector('[data-action="decrement"]'),
+//     btnIncrement: document.querySelector('[data-action="increment"]'),
+//     valueSpan: document.getElementById("value")
+//   };
+
+//   const { counter, btnDecrement,  btnIncrement, valueSpan} = refs;
+
+// let counterValue = 0;
+// btnDecrement.addEventListener('click', () => {
+//     counterValue -= 1;
+//     valueSpan.textContent = counterValue;
+// });
+// btnIncrement.addEventListener('click', () => {
+//     counterValue += 1;
+//     valueSpan.textContent = counterValue;
+// });
 
