@@ -241,4 +241,45 @@
 // console.log(productEl);
 
 // document.body.append(productEl);
+// const ref = {
+//     btnClickLeft: document.querySelector(".btn-click-left"),
+//     btnClickRight: document.querySelector(".btn-click-right"),
+//     btnClickUp: document.querySelector(".btn-click-up"),
+//     btnClickDown: document.querySelector(".btn-click-down")
+// }
+// const container = document.querySelector(".js-container");
+
+
+// ref.btnClickLeft.addEventListener('click', onClickLeft);
+
+
+// let step = 0;
+
+// function onClickLeft (event) {
+//     step += 5;
+//     container.style.marginLeft = `${step}px`;
+//     container.style.marginTop = `${step}px`;
+// }
+
+const title = document.querySelector(".text-js");
+
+
+title.addEventListener("click", onClick);
+const maxLengs = 13;
+const totalLength = maxLengs + 3;
+
+function onClick (event) {
+    const title = event.currentTarget;
+    const str = title.textContent.slice(0, maxLengs);
+    if(title.textContent.length > totalLength) {
+        const remaider = title.textContent.slice(maxLengs);
+        title.setAttribute('data-title', remaider)
+        title.textContent = str + '...';
+    } else {
+        const remaider = title.dataset.title;
+        title.textContent = str + remaider
+    }
+}
+
+
 
