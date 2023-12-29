@@ -144,4 +144,3 @@ function createColorCardsMarcup(colors) {
 
 const cardMarkup = createColorCardsMarcup(colors);
 colorPicker.insertAdjacentHTML("beforeend", cardMarkup);
-
