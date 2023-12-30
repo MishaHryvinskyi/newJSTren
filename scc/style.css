@@ -238,7 +238,7 @@ body.show-modal .modal {
 
     /* task7-ur */
 
-    .container {
+    /* .container {
         margin-bottom: 50px;
         display: flex;
         flex-direction: column;
@@ -246,7 +246,7 @@ body.show-modal .modal {
         margin-right: auto;
         align-items: center;
         justify-content: center;
-    }
+    } */
 
     .form {
         width: 500px;
@@ -284,7 +284,51 @@ body.show-modal .modal {
     }
 
     .box {
-        width: 40px;
-        height: 40px;
-        background-color: palevioletred;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
     }
+
+    .item-red {
+        background-color: red;
+      }
+
+      .item-green {
+        background-color: green;
+      }
+
+      .item-black {
+        background-color: black;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 100px 50px 50px 50px;
+      }
+
+      .content {
+        width: 155px;
+        border: 1px solid black;
+        margin:  0 auto;
+      }
+
+      .item {
+        color: blue;
+        font-weight: 900;
+        width: 50px;
+        height:  50px;
+        line-height: 50px;
+        text-align:  center;
+        display: inline-block;
+        font-size: 25px;
+        border: 1px solid black;
+        cursor:  pointer;
+        vertical-align:  middle;
+        transition: background .1s;
+        user-select: none;
+      }
+
+      .item:hover {
+        background-color: #f1f1f10c;
+      }
