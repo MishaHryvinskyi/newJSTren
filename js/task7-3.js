@@ -105,3 +105,33 @@
 //     }
 // }
 // onPopulateTextarea()
+
+// const arr = [1, 2, 3, 4];
+
+// localStorage.setItem('SET_KEY', JSON.stringify(arr));
+// console.log(localStorage.getItem("SET_KEY"))
+// console.log(JSON.parse(localStorage.getItem("SET_KEY")));
+// // localStorage.removeItem("SET_KEY");
+// // localStorage.clear();
+const LOCAL_KEY = "lokal";
+const LOCAK_VALUE = "Псєчий";
+
+const SESSION_KEY = 'session';
+const SESSION_VALUE = "Смердєчий";
+
+const refs = {
+    bthLocal: document.querySelector(".js-local"),
+    btnSession: document.querySelector(".js-session")
+};
+const { bthLocal, btnSession } = refs;
+
+console.log(bthLocal);
+console.log(btnSession);
+
+bthLocal.addEventListener('click', () => {
+    localStorage.setItem(LOCAL_KEY, LOCAK_VALUE);
+});
+
+btnSession.addEventListener('click', () => {
+    sessionStorage.setItem(SESSION_KEY, SESSION_VALUE);
+})
