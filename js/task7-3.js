@@ -63,5 +63,45 @@
 //     }
 // }
 
-// console.log(findUniq(['abc', 'acb', 'bav', 'foo', 'bca', 'cab', 'cba']));
+// console.log(findUniq(['abc', 'acb', 'bav', 'foo', 'bca', 'cabcl  
+// console.log(localStorage);
 
+// localStorage.setItem("my-data", JSON.stringify({ name: "Mango", age: 2 }));
+
+
+// const saveData = localStorage.getItem("my-data");
+// console.log("saveData", saveData);
+
+//  const parsData = JSON.parse(saveData);
+//  console.log("parsData", parsData);
+// const STORAGE_KEY = "feedback-message";
+
+// const refs = {
+//     form: document.querySelector(".js-feedback-form"),
+//     textarea: document.querySelector(".js-textarea"),
+// };
+
+// refs.form.addEventListener('submit', onFormSubmit);
+// refs.textarea.addEventListener("input", onTextareaInput);
+
+// function onFormSubmit(event) {
+//     event.preventDefault();
+//     console.log("відправляємо форму");
+
+//     event.currentTarget.reset();
+//     localStorage.removeItem(STORAGE_KEY);
+// }
+
+// function onTextareaInput(event) {
+//     const massage = event.currentTarget.value;
+//     localStorage.setItem(STORAGE_KEY, massage)
+// }
+
+// function onPopulateTextarea() {
+//     const sevedMessage = localStorage.getItem(STORAGE_KEY);
+//     if(sevedMessage) {
+//         console.log(sevedMessage);
+//         refs.textarea.value = sevedMessage;
+//     }
+// }
+// onPopulateTextarea()
