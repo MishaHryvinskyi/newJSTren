@@ -113,25 +113,100 @@
 // console.log(JSON.parse(localStorage.getItem("SET_KEY")));
 // // localStorage.removeItem("SET_KEY");
 // // localStorage.clear();
-const LOCAL_KEY = "lokal";
-const LOCAK_VALUE = "Псєчий";
+// const LOCAL_KEY = "lokal";
+// const LOCAK_VALUE = "Псєчий";
 
-const SESSION_KEY = 'session';
-const SESSION_VALUE = "Смердєчий";
+// const SESSION_KEY = 'session';
+// const SESSION_VALUE = "Смердєчий";
+
+// const refs = {
+//     bthLocal: document.querySelector(".js-local"),
+//     btnSession: document.querySelector(".js-session")
+// };
+// const { bthLocal, btnSession } = refs;
+
+// console.log(bthLocal);
+// console.log(btnSession);
+
+// bthLocal.addEventListener('click', () => {
+//     localStorage.setItem(LOCAL_KEY, LOCAK_VALUE);
+// });
+
+// btnSession.addEventListener('click', () => {
+//     sessionStorage.setItem(SESSION_KEY, SESSION_VALUE);
+// })
+
+// const date1 = Date.now();
+// console.log("date1", date1);
+
+// setTimeout(() => {
+//     const date2 = Date.now();
+//     console.log("date1", date1);
+//     console.log("date2", date2);
+
+//     console.log(date2 - date1)
+// }, 3000)
 
 const refs = {
-    bthLocal: document.querySelector(".js-local"),
-    btnSession: document.querySelector(".js-session")
+    startBtn: document.querySelector('button[data-action-start'),
+    stopBtn: document.querySelector('button[data-action-stop]'),
+    clockface: document.querySelector('.js-clockface'),
 };
-const { bthLocal, btnSession } = refs;
 
-console.log(bthLocal);
-console.log(btnSession);
+class Timer {
+    constructor({ onTick }) {
+        this.isActiv = false;
+        this.intervalId = null;
+        this.onTick = onTick;
+        this.init();
+    }
 
-bthLocal.addEventListener('click', () => {
-    localStorage.setItem(LOCAL_KEY, LOCAK_VALUE);
+    init() {
+        const time = this.getTimeComponents(0);
+        this.onTick(time);
+    }
+
+    start() {
+        if(this.isActiv) {
+            return;
+        }
+        const startTime = Date.now();
+        this.isActiv = true;
+        this.intervalId = setInterval(() => {
+            const currentTime = Date.now();
+            const deltaTime = currentTime - startTime;
+            const time = this.getTimeComponents(deltaTime);
+            this.onTick(time)
+        }, 1000);
+    }
+
+    stop() {
+        clearInterval(this.intervalId);
+        this.isActiv = false;
+        const time = this.getTimeComponents(0);
+        this.onTick(time);
+    }
+
+    getTimeComponents(time) {
+        const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+        const seconds = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+        
+        return { hours, mins, seconds }
+    }
+
+    pad(value) {
+        return String(value).padStart(2, "0");
+    }
+}
+
+const timer = new Timer({
+    onTick: updateClockface
 });
 
-btnSession.addEventListener('click', () => {
-    sessionStorage.setItem(SESSION_KEY, SESSION_VALUE);
-})
+refs.startBtn.addEventListener('click', timer.start.bind(timer));
+refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
+
+function updateClockface({ hours, mins, seconds }) {
+    refs.clockface.textContent = `${hours}:${mins}:${seconds}`;
+}
