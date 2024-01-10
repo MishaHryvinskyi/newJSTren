@@ -147,66 +147,118 @@
 //     console.log(date2 - date1)
 // }, 3000)
 
-const refs = {
-    startBtn: document.querySelector('button[data-action-start'),
-    stopBtn: document.querySelector('button[data-action-stop]'),
-    clockface: document.querySelector('.js-clockface'),
-};
+// const refs = {
+//     startBtn: document.querySelector('button[data-action-start'),
+//     stopBtn: document.querySelector('button[data-action-stop]'),
+//     clockface: document.querySelector('.js-clockface'),
+// };
 
-class Timer {
-    constructor({ onTick }) {
-        this.isActiv = false;
-        this.intervalId = null;
-        this.onTick = onTick;
-        this.init();
-    }
+// class Timer {
+//     constructor({ onTick }) {
+//         this.isActiv = false;
+//         this.intervalId = null;
+//         this.onTick = onTick;
+//         this.init();
+//     }
 
-    init() {
-        const time = this.getTimeComponents(0);
-        this.onTick(time);
-    }
+//     init() {
+//         const time = this.getTimeComponents(0);
+//         this.onTick(time);
+//     }
 
-    start() {
-        if(this.isActiv) {
-            return;
-        }
-        const startTime = Date.now();
-        this.isActiv = true;
-        this.intervalId = setInterval(() => {
-            const currentTime = Date.now();
-            const deltaTime = currentTime - startTime;
-            const time = this.getTimeComponents(deltaTime);
-            this.onTick(time)
-        }, 1000);
-    }
+//     start() {
+//         if(this.isActiv) {
+//             return;
+//         }
+//         const startTime = Date.now();
+//         this.isActiv = true;
+//         this.intervalId = setInterval(() => {
+//             const currentTime = Date.now();
+//             const deltaTime = currentTime - startTime;
+//             const time = this.getTimeComponents(deltaTime);
+//             this.onTick(time)
+//         }, 1000);
+//     }
 
-    stop() {
-        clearInterval(this.intervalId);
-        this.isActiv = false;
-        const time = this.getTimeComponents(0);
-        this.onTick(time);
-    }
+//     stop() {
+//         clearInterval(this.intervalId);
+//         this.isActiv = false;
+//         const time = this.getTimeComponents(0);
+//         this.onTick(time);
+//     }
 
-    getTimeComponents(time) {
-        const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-        const seconds = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+//     getTimeComponents(time) {
+//         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+//         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+//         const seconds = this.pad(Math.floor((time % (1000 * 60)) / 1000));
         
-        return { hours, mins, seconds }
-    }
+//         return { hours, mins, seconds }
+//     }
 
-    pad(value) {
-        return String(value).padStart(2, "0");
-    }
-}
+//     pad(value) {
+//         return String(value).padStart(2, "0");
+//     }
+// }
 
-const timer = new Timer({
-    onTick: updateClockface
-});
+// const timer = new Timer({
+//     onTick: updateClockface
+// });
 
-refs.startBtn.addEventListener('click', timer.start.bind(timer));
-refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
+// refs.startBtn.addEventListener('click', timer.start.bind(timer));
+// refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
 
-function updateClockface({ hours, mins, seconds }) {
-    refs.clockface.textContent = `${hours}:${mins}:${seconds}`;
-}
+// function updateClockface({ hours, mins, seconds }) {
+//     refs.clockface.textContent = `${hours}:${mins}:${seconds}`;
+// }
+
+
+// const date = new Date();
+// console.log(date);
+
+// const namesOfMonth = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липерь", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+
+// console.log(namesOfMonth[date.getMonth()]);
+
+// const arrDay = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "Пятниця", "Субота"];
+
+// console.log(arrDay[date.getDay()]);
+
+const date = document.querySelector('.date-day');
+const dateMonth = document.querySelector('.date');
+const month = document.querySelector('.date-month');
+const year = document.querySelector('.date-year');
+const digitalClock = document.querySelector('.digital-clock');
+const arrowSeconds = document.querySelector('.clock-seconds__arrow');
+const arrowMinutes = document.querySelector('.clock-minutes__arrow');
+const arrowHours = document.querySelector('.clock-hours__arrow');
+
+const arrDay = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "Пятниця", "Субота"];
+const namesOfMonth = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липерь", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+
+setInterval(() =>{
+    const currentTime = new Date();
+    const currentDate = currentTime.getDate();
+    const currentYear = currentTime.getFullYear();
+    const currentDay = arrDay[currentTime.getDay()]
+    const currentMonth = namesOfMonth[currentTime.getMonth()];
+    const currentHour = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+    const currentSecconds = currentTime.getSeconds();
+    const formatTime = `${currentHour.toString().padStart(2, "0")} : ${currentMinutes.toString().padStart(2, "0")} : ${currentSecconds.toString().padStart(2, "0")}`;
+
+    const changeSecond = (360 / 60) * currentSecconds;
+    const changeMinutes = (360 / 60) * currentMinutes;
+    const changeHours = (360 / 12) * currentHour + (360 / 12 / 60) * currentMinutes;
+
+
+    dateMonth.textContent = currentDate
+    month.textContent = currentMonth;
+    year.textContent = currentYear;
+    date.textContent = currentDay;
+    digitalClock.textContent = `Поточний час ${formatTime}`;
+
+    arrowSeconds.style.transform = `rotate(${changeSecond}deg)`;
+    arrowMinutes.style.transform = `rotate(${changeMinutes}deg)`;
+    arrowHours.style.transform = `rotate(${changeHours}deg)`;
+},1000);
+
