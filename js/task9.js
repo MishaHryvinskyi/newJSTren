@@ -91,45 +91,79 @@
 //     '%c Україні!',
 // 'color: yellow;')
 
-const startBtn = document.querySelector(".js-button");
-const container = document.querySelector(".js-container");
-const item = document.querySelector(".item");
+// const startBtn = document.querySelector(".js-button");
+// const container = document.querySelector(".js-container");
+// const item = document.querySelector(".item");
 
-startBtn.addEventListener('click', onStart);
+// startBtn.addEventListener('click', onStart);
 
-function onStart() {
-    const result = [];
-    [...container.children].forEach((box) => box.textContent = "");
-    [...container.children].forEach((box, i) => {
-        createPromise(i)
-        .then((smile) => {
-            box.textContent = smile;
-            result.push('1');
-        })
-        .catch((smile) => (box.textContent = smile))
-        .finally(() => {
-            setTimeout(() => {
-                if(i === container.children.length - 1) {
-                    if(!result.length || result.length === 3) {
-                        alert("Перемога")
-                    } else {
-                        alert("Поразка")
-                    }
-                }
-            }, 500)
-        });
-    });
-}
+// function onStart() {
+//     const result = [];
+//     [...container.children].forEach((box) => box.textContent = "");
+//     [...container.children].forEach((box, i) => {
+//         createPromise(i)
+//         .then((smile) => {
+//             box.textContent = smile;
+//             result.push('1');
+//         })
+//         .catch((smile) => (box.textContent = smile))
+//         .finally(() => {
+//             setTimeout(() => {
+//                 if(i === container.children.length - 1) {
+//                     if(!result.length || result.length === 3) {
+//                         alert("Перемога")
+//                     } else {
+//                         alert("Поразка")
+//                     }
+//                 }
+//             }, 500)
+//         });
+//     });
+// }
 
-function createPromise(delay) {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            const random = Math.random();
-            if(random > 0.5) {
-                res('🤑');
-            } else {
-                rej('😈');
-            }
-        }, 1000 * delay);
-    });
-}
+// function createPromise(delay) {
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             const random = Math.random();
+//             if(random > 0.5) {
+//                 res('🤑');
+//             } else {
+//                 rej('😈');
+//             }
+//         }, 1000 * delay);
+//     });
+// }
+
+// const fetchUsersBtn = document.querySelector(".btn");
+// const userList = document.querySelector(".user-list");
+
+// fetchUsersBtn.addEventListener("click", () => {
+//   fetchUsers()
+//     .then((users) => renderUsers(users))
+//     .catch((error) => console.log(error));
+// });
+
+// function fetchUsers() {
+//   return fetch("https://jsonplaceholder.typicode.com/users").then(
+//     (response) => {
+//       if (!response.ok) {
+//         throw new Error(response.status);
+//       }
+//       return response.json();
+//     }
+//   );
+// }
+
+// function renderUsers(users) {
+//   const markup = users
+//     .map((user) => {
+//         const {email, name, company: { name: nameCompany }} = user
+//       return `<li>
+//           <p><b>Name</b>: ${name}</p>
+//           <p><b>Email</b>: ${email}</p>
+//           <p><b>Company</b>: ${nameCompany}</p>
+//         </li>`;
+//     })
+//     .join("");
+//   userList.insertAdjacentHTML("beforeend", markup);
+// }
